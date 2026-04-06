@@ -3,255 +3,503 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahmmod Abuhani</title>
-  <meta name="description" content="Portfolio — Mahmmod Abuhani. Data Science, International Relations, writing, and projects." />
+  <title>Mahmmod Abuhani — Data Scientist</title>
+  <meta name="description" content="Mahmmod Abuhani — Data Scientist working at the intersection of human systems, language, and social impact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Skip nav -->
   <a class="skip" href="#content">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container header-grid">
-      <div class="brand">
-        <div class="name">Mahmmod Abuhani</div>
-        <div class="tagline">Data Science · Economics · Sociology</div>
-      </div>
-
-      <nav class="nav">
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#content" class="brand-mark">
+        <span class="brand-initials">MA</span>
+        <span class="brand-name">Mahmmod Abuhani</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
         <a href="#work">Work</a>
-        <a href="#writing">Writing</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
     </div>
   </header>
 
-  <main id="content" class="container">
+  <main id="content">
+
+    <!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
     <section class="hero">
-      <p class="kicker">Portfolio</p>
-      <h1 class="headline">
-          Human-centered work at the intersection of data, politics, and culture.
-      </h1>
-      <p class="subhead">
-        This site is a living archive — projects, writing, and selected work. Updated as I publish and ship.
-      </p>
+      <div class="container">
 
-      <div class="hero-actions">
-        <a class="btn" href="#work">View work</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
-      </div>
+        <div class="hero-eyebrow">
+          <span class="tag">Data Science</span>
+          <span class="tag">Social Impact</span>
+          <span class="tag">5 Languages</span>
+        </div>
 
-      <div class="meta-row">
-        <div class="meta">
-          <span class="meta-label">Based in</span>
-          <span class="meta-value">Chicago, IL</span>
+        <h1 class="hero-headline">
+          Making sense of<br/>
+          <em>human systems</em><br/>
+          through data.
+        </h1>
+
+        <p class="hero-sub">
+          Undergraduate Data Scientist at Lake Forest College. I work at the intersection
+          of policy, community, and language — turning messy, real-world data into
+          decisions that matter for people.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#work">View work</a>
+          <a class="btn btn-outline" href="#contact">Get in touch</a>
         </div>
-        <div class="meta">
-          <span class="meta-label">Focus</span>
-          <span class="meta-value">Data + Policy + narrative</span>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Languages spoken</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-num">300+</div>
+            <div class="stat-label">Students served</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Countries lived in</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-num">IL</div>
+            <div class="stat-label">Based in Chicago</div>
+          </div>
         </div>
-        <div class="meta">
-          <span class="meta-label">Currently</span>
-          <span class="meta-value">Building projects & working on my portfolio thanks for asking :)</span>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span class="scroll-line"></span>
+          <span class="scroll-text">scroll</span>
         </div>
+
       </div>
     </section>
 
-    <!-- WORK -->
+    <!-- ═══════════════════════════════════ TICKER ═══════════════════════════════════ -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Data Analysis</span><span class="sep">·</span>
+        <span>Machine Learning</span><span class="sep">·</span>
+        <span>Python</span><span class="sep">·</span>
+        <span>SQL</span><span class="sep">·</span>
+        <span>Social Research</span><span class="sep">·</span>
+        <span>Urban Data</span><span class="sep">·</span>
+        <span>NLP</span><span class="sep">·</span>
+        <span>Policy Analysis</span><span class="sep">·</span>
+        <span>Arabic · English · Italian · Spanish · Hebrew</span><span class="sep">·</span>
+        <span>Data Visualization</span><span class="sep">·</span>
+        <span>Statistical Modeling</span><span class="sep">·</span>
+        <span>Data Analysis</span><span class="sep">·</span>
+        <span>Machine Learning</span><span class="sep">·</span>
+        <span>Python</span><span class="sep">·</span>
+        <span>SQL</span><span class="sep">·</span>
+        <span>Social Research</span><span class="sep">·</span>
+        <span>Urban Data</span><span class="sep">·</span>
+        <span>NLP</span><span class="sep">·</span>
+        <span>Policy Analysis</span><span class="sep">·</span>
+        <span>Arabic · English · Italian · Spanish · Hebrew</span><span class="sep">·</span>
+        <span>Data Visualization</span><span class="sep">·</span>
+        <span>Statistical Modeling</span><span class="sep">·</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════ WORK ═══════════════════════════════════ -->
     <section id="work" class="section">
-      <div class="section-head">
-        <h2>Selected work</h2>
-        <p>Curated projects and contributions. Replace placeholders with your real work as you go.</p>
-      </div>
+      <div class="container">
 
-      <div class="grid">
-        <!-- PROJECT CARD TEMPLATE: copy/paste to add more -->
-        <article class="card">
-          <div class="card-top">
-            <h3>Project Title (Placeholder)</h3>
-            <span class="pill">Category</span>
-          </div>
-          <p class="card-desc">
-            One to two sentences describing what you built, why it matters, and the outcome.
-          </p>
-          <ul class="card-list">
-            <li><strong>Tools:</strong> Python, SQL, Tableau (example)</li>
-            <li><strong>Focus:</strong> Policy analysis / data modeling / storytelling</li>
-            <li><strong>Outcome:</strong> Metric, impact, publication, or result</li>
-          </ul>
-          <div class="card-links">
-            <a href="#" aria-disabled="true" class="muted">Live (soon)</a>
-            <span class="dot">·</span>
-            <a href="#" aria-disabled="true" class="muted">Code (soon)</a>
-            <span class="dot">·</span>
-            <a href="#" aria-disabled="true" class="muted">Case study (soon)</a>
-          </div>
-        </article>
+        <div class="section-label">Selected work</div>
+        <h2 class="section-title">Projects &amp; Research</h2>
 
-        <article class="card">
-          <div class="card-top">
-            <h3>Project Title (Placeholder)</h3>
-            <span class="pill">Research</span>
-          </div>
-          <p class="card-desc">
-            What question you investigated and what insight you produced.
-          </p>
-          <ul class="card-list">
-            <li><strong>Methods:</strong> Interviews / experiments / regression / visualization</li>
-            <li><strong>Context:</strong> Course, lab, internship, independent</li>
-            <li><strong>Deliverable:</strong> Report, presentation, dataset, tool</li>
-          </ul>
-          <div class="card-links">
-            <a href="#" aria-disabled="true" class="muted">PDF (soon)</a>
-            <span class="dot">·</span>
-            <a href="#" aria-disabled="true" class="muted">Slides (soon)</a>
-          </div>
-        </article>
+        <div class="projects-grid">
 
-        <article class="card">
-          <div class="card-top">
-            <h3>Project Title (Placeholder)</h3>
-            <span class="pill">Creative</span>
-          </div>
-          <p class="card-desc">
-            A clean description of your creative project (film, magazine, editorial, archive).
-          </p>
-          <ul class="card-list">
-            <li><strong>Role:</strong> Editor / producer / designer</li>
-            <li><strong>Theme:</strong> Memory, futurism, critique</li>
-            <li><strong>Status:</strong> Ongoing / published / upcoming</li>
-          </ul>
-          <div class="card-links">
-            <a href="#" aria-disabled="true" class="muted">Feature (soon)</a>
-            <span class="dot">·</span>
-            <a href="#" aria-disabled="true" class="muted">Archive (soon)</a>
-          </div>
-        </article>
-      </div>
-    </section>
+          <!-- Project 1 -->
+          <article class="project-card project-card--featured reveal">
+            <div class="project-meta">
+              <span class="project-tag">Urban Data</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">Regenerative Neighborhood Analysis</h3>
+            <p class="project-desc">
+              Applied comparative spatial analysis across disadvantaged neighborhoods in
+              Chicago and Pittsburgh for Sweet Water Foundation. Built a standardized
+              analytical framework to surface ecological and social patterns informing
+              urban development strategy — impacting thousands of South Side residents.
+            </p>
+            <ul class="project-stack">
+              <li>Python</li><li>Pandas</li><li>Spatial Analysis</li><li>Policy Research</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-status status--active">Case study coming</span>
+              <a href="work/regenerative-neighborhood.html" class="project-link">Read more →</a>
+            </div>
+          </article>
 
-    <!-- WRITING -->
-    <section id="writing" class="section">
-      <div class="section-head">
-        <h2>Writing</h2>
-        <p>Essays, research notes, and selected publications. Start with 3–6, expand gradually.</p>
-      </div>
+          <!-- Project 2 -->
+          <article class="project-card reveal">
+            <div class="project-meta">
+              <span class="project-tag">Sports Analytics</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">Athletic Network Engagement Model</h3>
+            <p class="project-desc">
+              Analyzed engagement and budget data for the Forester Athletic Network at
+              Lake Forest College. Produced actionable strategies that directly shaped
+              planning for Homecoming and NCAA events. Mixed-methods: quant modeling +
+              qualitative stakeholder research.
+            </p>
+            <ul class="project-stack">
+              <li>Python</li><li>SQL</li><li>Excel</li><li>Data Viz</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-status status--wip">Write-up in progress</span>
+              <a href="work/athletic-network.html" class="project-link">Read more →</a>
+            </div>
+          </article>
 
-      <div class="list">
-        <!-- WRITING ITEM TEMPLATE -->
-        <a class="row" href="#" aria-disabled="true">
-          <div class="row-main">
-            <div class="row-title">Title of piece (Placeholder)</div>
-            <div class="row-sub">Short description — topic, argument, or takeaway.</div>
-          </div>
-          <div class="row-meta">Year</div>
-        </a>
+          <!-- Project 3 -->
+          <article class="project-card reveal">
+            <div class="project-meta">
+              <span class="project-tag">NLP · Multilingual</span>
+              <span class="project-year">Building</span>
+            </div>
+            <h3 class="project-title">Arabic–English Sentiment Bridge</h3>
+            <p class="project-desc">
+              An ongoing personal project leveraging fluency in Arabic and English to
+              study sentiment divergence in Arabic-language news vs. English translations
+              of the same events. Exploring how language shapes perception of political
+              events in MENA contexts.
+            </p>
+            <ul class="project-stack">
+              <li>Python</li><li>HuggingFace</li><li>NLP</li><li>Arabic NLP</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-status status--building">In development</span>
+              <a href="#contact" class="project-link">Follow progress →</a>
+            </div>
+          </article>
 
-        <a class="row" href="#" aria-disabled="true">
-          <div class="row-main">
-            <div class="row-title">Title of piece (Placeholder)</div>
-            <div class="row-sub">Short description — topic, argument, or takeaway.</div>
-          </div>
-          <div class="row-meta">Year</div>
-        </a>
+          <!-- Project 4 -->
+          <article class="project-card reveal">
+            <div class="project-meta">
+              <span class="project-tag">Compliance · Data Systems</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">International Student Data Infrastructure</h3>
+            <p class="project-desc">
+              Designed and maintained high-volume immigration documentation databases
+              for 300+ international students at Lake Forest College. Reduced compliance
+              risk by auditing financial eligibility against federal requirements and
+              standardizing information flow across the office.
+            </p>
+            <ul class="project-stack">
+              <li>Database Management</li><li>Compliance Auditing</li><li>Process Design</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-status status--done">Ongoing role</span>
+              <a href="#about" class="project-link">More context →</a>
+            </div>
+          </article>
 
-        <a class="row" href="#" aria-disabled="true">
-          <div class="row-main">
-            <div class="row-title">Title of piece (Placeholder)</div>
-            <div class="row-sub">Short description — topic, argument, or takeaway.</div>
-          </div>
-          <div class="row-meta">Year</div>
-        </a>
+        </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="section-head">
-        <h2>About</h2>
-        <p>Keep this precise, credible, and calm. No hype.</p>
-      </div>
+    <!-- ═══════════════════════════════════ ABOUT ═══════════════════════════════════ -->
+    <section id="about" class="section section--alt">
+      <div class="container">
 
-      <div class="two-col">
-        <div class="prose">
-          <p>
-            I’m Mahmmod Abuhani, an undergraduate based in Illinois studying Data Science and International Relations.
-            I care about rigorous analysis, ethical technology, and work that respects human attention and dignity.
+        <div class="section-label">About me</div>
+        <h2 class="section-title">The context behind the work.</h2>
+
+        <div class="about-grid">
+          <div class="about-bio reveal">
+            <p>
+              I'm a Data Science undergraduate at Lake Forest College — concentration in
+              Computer Science, minor in Economics and Sociology. I was born and raised with
+              Arabic as my first language, completed the International Baccalaureate in Italy,
+              and now work across humanitarian, civic, and analytical contexts in Chicago.
+            </p>
+            <p>
+              My work sits at the intersection of <strong>data, human systems, and language</strong>.
+              I'm drawn to problems where the data is messy because the reality underneath it is
+              complex: immigration, urban equity, community health, cross-cultural communication.
+            </p>
+            <p>
+              Outside of data work, I've served as a panel speaker for Médecins Sans Frontières,
+              co-developed curriculum in International Humanitarian Law, and led fundraising
+              for international student emergency support. These aren't side stories — they
+              shape how I think about what data should be <em>for</em>.
+            </p>
+            <div class="about-cta">
+              <a class="btn btn-primary" href="assets/pdfs/Mahmmod_Abuhani_Resume.pdf" target="_blank">
+                Download resume (PDF)
+              </a>
+              <a class="btn btn-outline" href="https://linkedin.com/in/mahmmodabuhani" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="about-sidebar reveal">
+            <div class="sidebar-block">
+              <div class="sidebar-label">Skills</div>
+              <div class="skills-list">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Statistical Modeling</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">NLP</span>
+                <span class="skill-tag">Qualitative Research</span>
+                <span class="skill-tag">Policy Analysis</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Media Production</span>
+              </div>
+            </div>
+
+            <div class="sidebar-block">
+              <div class="sidebar-label">Languages</div>
+              <div class="lang-list">
+                <div class="lang-item">
+                  <span class="lang-name">Arabic</span>
+                  <span class="lang-level lang-native">Native</span>
+                </div>
+                <div class="lang-item">
+                  <span class="lang-name">English</span>
+                  <span class="lang-level lang-native">Fluent</span>
+                </div>
+                <div class="lang-item">
+                  <span class="lang-name">Italian</span>
+                  <span class="lang-level lang-inter">Intermediate</span>
+                </div>
+                <div class="lang-item">
+                  <span class="lang-name">Spanish</span>
+                  <span class="lang-level lang-inter">Intermediate</span>
+                </div>
+                <div class="lang-item">
+                  <span class="lang-name">Hebrew</span>
+                  <span class="lang-level lang-basic">Beginner</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-block">
+              <div class="sidebar-label">Education</div>
+              <div class="edu-item">
+                <div class="edu-school">Lake Forest College</div>
+                <div class="edu-detail">B.S. Data Science · Expected 2026</div>
+                <div class="edu-detail muted">Presidential Scholarship · Davis UWC Scholarship</div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-school">UWC of the Adriatic</div>
+                <div class="edu-detail">International Baccalaureate · Duino, Italy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ EXPERIENCE ═══════════════════════════════════ -->
+    <section id="experience" class="section">
+      <div class="container">
+
+        <div class="section-label">Experience</div>
+        <h2 class="section-title">Where I've worked.</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+            <div class="timeline-date">May 2025 – Present</div>
+            <div class="timeline-body">
+              <div class="timeline-role">Academic Researcher &amp; Teaching Assistant</div>
+              <div class="timeline-org">Lake Forest College, Illinois</div>
+              <p class="timeline-desc">
+                Co-developed a new International Humanitarian Law course — curating case studies
+                and legal frameworks — with the department chair. Led lecture sessions and supported
+                assessment design for 200+ students.
+              </p>
+              <ul class="timeline-tags">
+                <li>Curriculum Design</li><li>Research</li><li>Instruction</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-date">Aug – Dec 2025</div>
+            <div class="timeline-body">
+              <div class="timeline-role">Data Analyst Intern</div>
+              <div class="timeline-org">Forester Athletic Network, Lake Forest</div>
+              <p class="timeline-desc">
+                Examined engagement and budget data to drive decision-making efficiency.
+                Developed marketing strategies for major events including Homecoming and
+                NCAA games. Used quantitative and qualitative methods to increase revenue
+                and membership engagement.
+              </p>
+              <ul class="timeline-tags">
+                <li>Python</li><li>Data Analysis</li><li>Budget Modeling</li><li>Strategy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-date">Feb – May 2025</div>
+            <div class="timeline-body">
+              <div class="timeline-role">Regenerative Neighborhood Research Intern</div>
+              <div class="timeline-org">Sweet Water Foundation, Chicago</div>
+              <p class="timeline-desc">
+                Conducted applied research on urban ecological systems in disadvantaged
+                neighborhoods across Pittsburgh and Chicago. Produced analytical reports
+                informing regenerative development strategies impacting thousands on
+                Chicago's South Side.
+              </p>
+              <ul class="timeline-tags">
+                <li>Urban Analytics</li><li>Spatial Analysis</li><li>Policy Research</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-date">May 2025 – Present</div>
+            <div class="timeline-body">
+              <div class="timeline-role">International Student Support Assistant</div>
+              <div class="timeline-org">Office of Intercultural Relations, Lake Forest College</div>
+              <p class="timeline-desc">
+                Processed immigration documentation for 300+ international undergraduates in
+                compliance with federal regulations. Audited financial eligibility, maintained
+                high-volume student databases, and reduced compliance risk across the office.
+              </p>
+              <ul class="timeline-tags">
+                <li>Database Management</li><li>Federal Compliance</li><li>Data Auditing</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ WRITING ═══════════════════════════════════ -->
+    <section id="writing" class="section section--alt">
+      <div class="container">
+        <div class="section-label">Writing</div>
+        <h2 class="section-title">Essays &amp; notes.</h2>
+        <p class="section-sub">
+          Analysis, reflections, and ideas at the intersection of data, policy, and culture.
+          More coming soon.
+        </p>
+
+        <div class="writing-list">
+          <a class="writing-row reveal" href="#" aria-disabled="true">
+            <div class="writing-num">01</div>
+            <div class="writing-body">
+              <div class="writing-title">What Arabic news data reveals that English translation hides</div>
+              <div class="writing-sub">On sentiment divergence, framing, and the politics of language in MENA coverage.</div>
+            </div>
+            <div class="writing-right">
+              <span class="writing-tag">NLP · Language</span>
+              <span class="writing-status">Coming soon</span>
+            </div>
+          </a>
+
+          <a class="writing-row reveal" href="#" aria-disabled="true">
+            <div class="writing-num">02</div>
+            <div class="writing-body">
+              <div class="writing-title">Data and the neighborhood: lessons from South Side Chicago</div>
+              <div class="writing-sub">What applied urban research taught me about the limits — and power — of numbers.</div>
+            </div>
+            <div class="writing-right">
+              <span class="writing-tag">Urban · Policy</span>
+              <span class="writing-status">Coming soon</span>
+            </div>
+          </a>
+
+          <a class="writing-row reveal" href="#" aria-disabled="true">
+            <div class="writing-num">03</div>
+            <div class="writing-body">
+              <div class="writing-title">Why international students are a dataset no one is analyzing</div>
+              <div class="writing-sub">Reflections from a year managing immigration data for 300+ students.</div>
+            </div>
+            <div class="writing-right">
+              <span class="writing-tag">Education · Data</span>
+              <span class="writing-status">Coming soon</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ CONTACT ═══════════════════════════════════ -->
+    <section id="contact" class="section">
+      <div class="container">
+
+        <div class="contact-block reveal">
+          <div class="section-label">Contact</div>
+          <h2 class="contact-headline">
+            Let's work on something<br/><em>that matters.</em>
+          </h2>
+          <p class="contact-sub">
+            Open to research collaborations, data projects, internships, and conversations
+            about social impact + data science. Based in Lake Forest / Chicago.
           </p>
-          <p>
-            This portfolio is designed as a sustainable archive: each project has a brief summary, tools/methods, and links
-            to code, demos, or write-ups. Over time, I expand by adding case studies and publications.
-          </p>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="mailto:abuhanimahmmod@gmail.com">
+              abuhanimahmmod@gmail.com
+            </a>
+            <a class="btn btn-outline" href="https://linkedin.com/in/mahmmodabuhani" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a class="btn btn-outline" href="https://github.com/MahmmodAbuhani" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </div>
         </div>
 
-        <aside class="aside">
-          <div class="aside-block">
-            <div class="aside-title">Areas</div>
-            <ul class="bullets">
-              <li>Data analysis & visualization</li>
-              <li>Policy / social research</li>
-              <li>Editorial & archival work</li>
-            </ul>
-          </div>
-          <div class="aside-block">
-            <div class="aside-title">Now</div>
-            <ul class="bullets">
-              <li>Building a long-term body of work</li>
-              <li>Publishing writing and case studies</li>
-              <li>Maintaining a clean portfolio archive</li>
-            </ul>
-          </div>
-        </aside>
       </div>
     </section>
 
-    <!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="section-head">
-    <h2>Contact</h2>
-    <p>Open to collaboration, research, and conversation.</p>
-  </div>
-
-  <div class="contact">
-    <a class="btn" href="mailto:abuhanimahmmod@gmail.com">Email</a>
-
-    <a
-      class="btn btn-ghost"
-      href="https://www.linkedin.com/in/mahmmodabuhani/"
-      target="_blank"
-      rel="noreferrer"
-    >
-      LinkedIn
-    </a>
-
-    <a
-      class="btn btn-ghost"
-      href="https://github.com/MahmmodAbuhani"
-      target="_blank"
-      rel="noreferrer"
-    >
-      GitHub
-    </a>
-
-<a class="btn btn-ghost muted" aria-disabled="true">Resume (PDF soon)</a>
-
-  </div>
-
-
-      <p class="footnote">
-        Tip: when you add your resume PDF later, upload it to the repo (e.g., <span class="mono">/assets/Mahmmod_Abuhani_Resume.pdf</span>)
-        and link to it here.
-      </p>
-    </section>
-
-    <footer class="footer">
-      <div>© <span id="year"></span> Mahmmod Abuhani</div>
-      <div class="footer-right">
-        <a href="#content">Back to top</a>
-      </div>
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="brand-initials sm">MA</span>
+        <span>© <span id="year"></span> Mahmmod Abuhani</span>
+      </div>
+      <div class="footer-right">
+        <a href="#content">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
