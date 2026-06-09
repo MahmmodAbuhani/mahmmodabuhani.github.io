@@ -4,77 +4,70 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mahmmod Abuhani — Data Science Student</title>
-<meta name="description" content="Data science student at Lake Forest College building applied analytics, data systems, and policy research — SQL databases, Python and machine learning, numerical methods, and policy-aware data storytelling." />
- 
-<!-- Public copy is drawn from the Approved Claims Ledger. Items still needing the owner:
-     per-project repo URLs, a public-safe résumé link. See CLAIMS_BOUNDARY.md. -->
- 
+<meta name="description" content="Data science student at Lake Forest College building applied analytics, data systems, and strategy research — SQL databases, Python and machine learning, numerical methods, and data-driven insight." />
+
+<!-- Public copy is drawn from the Approved Claims Ledger.
+     TODO for the owner: replace the mailto placeholder with your email,
+     add profile.jpg for your photo, and add per-project repo URLs. -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
- 
+
 <style>
   :root{
-    --paper:#FBF9F4; --paper-2:#F3F0E7; --card:#FFFFFF;
+    --paper:#FBF9F4; --paper-2:#F2F1E7; --card:#FFFFFF;
     --ink:#1B1A17; --ink-soft:#3C3A34; --muted:#6E6A60;
-    --line:#E6E0D1; --line-strong:#D8CFB9;
- 
-    --accent:#B4541F; --accent-deep:#8A3E16; --accent-tint:#F6E7DA;
- 
-    /* dark closing section */
-    --d-bg:#1A1813; --d-bg-2:#221F18; --d-text:#F2EEE4; --d-muted:#A39E92;
-    --d-accent:#E89B5E; --d-line:rgba(242,238,228,.14);
- 
+    --line:#E5E1D2; --line-strong:#D6D1BD;
+
+    /* brand accent — dark olive green */
+    --accent:#556B2F; --accent-deep:#3F4F22; --accent-tint:#E9EDDD;
+
+    /* dark closing section (green-charcoal) */
+    --d-bg:#1A1C16; --d-bg-2:#212419; --d-text:#F1F0E7; --d-muted:#A0A296;
+    --d-accent:#A9C172; --d-line:rgba(241,240,231,.14);
+
     /* status hues (badges) */
     --ok:#2E7D5B; --ok-bg:#E4F0E8;
     --review:#9A6A12; --review-bg:#F4EAD2;
     --plan:#566372; --plan-bg:#E7EBEF;
     --found:#37618E; --found-bg:#E2EAF3;
- 
+
     --serif:"Newsreader", Georgia, "Times New Roman", serif;
     --display:"Instrument Serif", Georgia, serif;
     --mono:"Spline Sans Mono", ui-monospace, Menlo, monospace;
- 
+
     --maxw:1120px;
     --gap:clamp(14px,2vw,22px);
     --radius:5px;
     --ease:cubic-bezier(.22,.61,.36,1);
     --ease-out:cubic-bezier(.16,1,.3,1);
   }
- 
+
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:var(--serif); font-size:18px; line-height:1.62; font-weight:400;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
-  }
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.62;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
   a{color:inherit}
   ::selection{background:var(--accent-tint);color:var(--ink)}
   code{font-family:var(--mono);font-size:.86em;background:var(--paper-2);padding:1px 5px;border-radius:3px}
- 
-  /* layered background: grain + faint dot grid */
+
   body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.045;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
   body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.5;
-    background-image:radial-gradient(var(--line-strong) 1px, transparent 1px);
-    background-size:30px 30px; -webkit-mask-image:linear-gradient(180deg,#000,transparent 40%); mask-image:linear-gradient(180deg,#000,transparent 40%);}
- 
+    background-image:radial-gradient(var(--line-strong) 1px, transparent 1px);background-size:30px 30px;
+    -webkit-mask-image:linear-gradient(180deg,#000,transparent 40%);mask-image:linear-gradient(180deg,#000,transparent 40%);}
+
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,44px)}
- 
   .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100}
   .skip:focus{left:0}
   :where(a,button):focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
- 
-  /* scroll progress */
   .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:60;transition:width .08s linear}
- 
-  /* ---------- header ---------- */
-  header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 82%,transparent);
-    backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s ease,background .3s ease}
+
+  /* header */
+  header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s ease}
   header.site.scrolled{border-color:var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.01em;text-decoration:none}
+  .brand{font-family:var(--mono);font-weight:600;font-size:14px;text-decoration:none}
   .brand .dot{color:var(--accent)}
   .nav-links{display:flex;gap:28px;align-items:center}
   .nav-links a{font-family:var(--mono);font-size:13px;letter-spacing:.03em;text-transform:lowercase;text-decoration:none;color:var(--muted);padding:6px 0;position:relative;transition:color .25s var(--ease)}
@@ -89,8 +82,8 @@
     .nav-links a::after{display:none}
     .menu-btn{display:inline-block}
   }
- 
-  /* ---------- section scaffold ---------- */
+
+  /* section scaffold */
   main section{position:relative;padding:clamp(58px,9vw,110px) 0;border-bottom:1px solid var(--line)}
   .s-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
   .s-head .num{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.05em;padding-top:6px}
@@ -98,23 +91,23 @@
   .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   h2.sect{font-family:var(--display);font-weight:400;font-size:clamp(31px,5vw,50px);line-height:1.04;letter-spacing:.004em;margin:0 0 22px;max-width:20ch}
   .lede{max-width:62ch;color:var(--ink-soft);font-size:clamp(17px,2.1vw,20px)}
- 
-  /* ---------- hero ---------- */
-  .hero{padding:clamp(70px,13vw,150px) 0 clamp(54px,9vw,96px);overflow:hidden}
+
+  /* hero */
+  .hero{padding:clamp(64px,12vw,140px) 0 clamp(50px,8vw,92px);overflow:hidden}
   .hero-glow{position:absolute;top:-12%;right:-8%;width:min(60vw,640px);height:min(60vw,640px);
-    background:radial-gradient(circle at 50% 50%, color-mix(in srgb,var(--accent) 26%,transparent), transparent 64%);
-    filter:blur(20px);z-index:-1;animation:drift 16s ease-in-out infinite}
+    background:radial-gradient(circle at 50% 50%, color-mix(in srgb,var(--accent) 30%,transparent), transparent 64%);filter:blur(22px);z-index:-1;animation:drift 16s ease-in-out infinite}
   @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-26px,22px) scale(1.06)}}
-  .hero .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.03em;color:var(--muted);margin:0 0 24px;display:inline-flex;align-items:center;gap:10px}
+  .hero .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.03em;color:var(--muted);margin:0 0 22px;display:inline-flex;align-items:center;gap:10px}
   .hero .kicker::before{content:"";width:26px;height:1px;background:var(--accent)}
-  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(42px,8.6vw,90px);line-height:1.0;letter-spacing:.003em;margin:0 0 28px;max-width:17ch}
-  .hero h1 em{font-style:italic;color:var(--accent)}
-  .hero p.intro{max-width:60ch;font-size:clamp(18px,2.4vw,22px);color:var(--ink-soft);margin:0 0 34px}
+  .hero h1.name{font-family:var(--display);font-weight:400;font-size:clamp(48px,9.4vw,108px);line-height:.96;letter-spacing:.002em;margin:0 0 16px}
+  .hero .role-line{font-family:var(--display);font-weight:400;font-size:clamp(25px,3.7vw,42px);line-height:1.08;color:var(--ink);margin:0 0 26px;max-width:20ch}
+  .hero .role-line em{font-style:italic;color:var(--accent)}
+  .hero p.intro{max-width:60ch;font-size:clamp(17px,2.3vw,21px);color:var(--ink-soft);margin:0 0 34px}
   .signals{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 38px;padding:0;list-style:none}
-  .signals li{font-family:var(--mono);font-size:12.5px;letter-spacing:.01em;border:1px solid var(--line-strong);border-radius:999px;padding:8px 15px;color:var(--ink-soft);background:color-mix(in srgb,var(--card) 60%,transparent);transition:border-color .25s var(--ease),transform .25s var(--ease)}
+  .signals li{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line-strong);border-radius:999px;padding:8px 15px;color:var(--ink-soft);background:color-mix(in srgb,var(--card) 60%,transparent);transition:border-color .25s var(--ease),transform .25s var(--ease)}
   .signals li:hover{border-color:var(--accent);transform:translateY(-2px)}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-  .btn{font-family:var(--mono);font-size:13.5px;letter-spacing:.01em;text-decoration:none;padding:14px 24px;border-radius:var(--radius);display:inline-flex;align-items:center;gap:9px;transition:transform .2s var(--ease),background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);will-change:transform}
+  .btn{font-family:var(--mono);font-size:13.5px;text-decoration:none;padding:14px 24px;border-radius:var(--radius);display:inline-flex;align-items:center;gap:9px;transition:transform .2s var(--ease),background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);will-change:transform}
   .btn.primary{background:var(--ink);color:var(--paper)}
   .btn.primary:hover{background:var(--accent-deep)}
   .btn.ghost{border:1px solid var(--line-strong);color:var(--ink)}
@@ -122,22 +115,19 @@
   .btn .arw{transition:transform .2s var(--ease)}
   .btn:hover .arw{transform:translate(4px,-1px)}
   .resume-note{font-family:var(--mono);font-size:12px;color:var(--muted)}
-  .scroll-cue{margin-top:54px;display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-  .scroll-cue .ln{width:34px;height:1px;background:var(--muted);position:relative;overflow:hidden}
-  .scroll-cue .ln::after{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-100%);animation:slide 2.4s var(--ease) infinite}
-  @keyframes slide{0%{transform:translateX(-100%)}55%,100%{transform:translateX(100%)}}
- 
-  /* hero load choreography */
+  .scroll-arrow{margin-top:50px;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line-strong);border-radius:50%;color:var(--accent);text-decoration:none;transition:border-color .25s var(--ease),transform .25s var(--ease)}
+  .scroll-arrow:hover{border-color:var(--accent);transform:translateY(3px)}
+  .scroll-arrow svg{width:18px;height:18px;animation:bob 1.8s var(--ease) infinite}
+  @keyframes bob{0%,100%{transform:translateY(-2px)}50%{transform:translateY(3px)}}
+
   @keyframes heroIn{from{opacity:0;transform:translateY(22px);filter:blur(9px)}to{opacity:1;transform:none;filter:blur(0)}}
   .hv{opacity:0;animation:heroIn .9s var(--ease-out) forwards}
-  .hv.d1{animation-delay:.04s}.hv.d2{animation-delay:.12s}.hv.d3{animation-delay:.22s}.hv.d4{animation-delay:.32s}.hv.d5{animation-delay:.42s}.hv.d6{animation-delay:.62s}
- 
-  /* ---------- projects ---------- */
+  .hv.d1{animation-delay:.03s}.hv.d2{animation-delay:.1s}.hv.d3{animation-delay:.2s}.hv.d4{animation-delay:.3s}.hv.d5{animation-delay:.4s}.hv.d6{animation-delay:.5s}.hv.d7{animation-delay:.7s}
+
+  /* projects */
   .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--gap)}
-  .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px 22px;display:flex;flex-direction:column;gap:13px;overflow:hidden;--mx:50%;--my:0%;
-    transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
-  .card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s var(--ease);
-    background:radial-gradient(440px circle at var(--mx) var(--my), color-mix(in srgb,var(--accent) 11%,transparent), transparent 60%)}
+  .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px 22px;display:flex;flex-direction:column;gap:13px;overflow:hidden;--mx:50%;--my:0%;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+  .card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s var(--ease);background:radial-gradient(440px circle at var(--mx) var(--my), color-mix(in srgb,var(--accent) 12%,transparent), transparent 60%)}
   .card:hover{border-color:var(--line-strong);box-shadow:0 18px 40px -26px rgba(27,26,23,.4);transform:translateY(-4px)}
   .card:hover::after{opacity:1}
   .card>*{position:relative;z-index:1}
@@ -147,7 +137,6 @@
   .c-3{grid-column:span 3}.c-2{grid-column:span 2}
   @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.card.feature{grid-column:span 2;grid-template-columns:1fr}.c-3,.c-2{grid-column:span 1}}
   @media (max-width:560px){.grid{grid-template-columns:1fr}.card.feature,.c-3,.c-2{grid-column:span 1}}
- 
   .card .topline{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .card h3{font-family:var(--display);font-weight:400;font-size:clamp(21px,2.7vw,28px);line-height:1.08;margin:0}
   .card.feature h3{font-size:clamp(25px,3.4vw,34px)}
@@ -160,29 +149,39 @@
   .badge.found{background:var(--found-bg);color:var(--found)}.badge.found::before{background:var(--found)}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
-  .tag{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:3px 8px;transition:border-color .2s var(--ease),color .2s var(--ease)}
+  .tag{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:3px 8px;transition:border-color .2s var(--ease)}
   .card:hover .tag{border-color:var(--line-strong)}
-  .link{font-family:var(--mono);font-size:12.5px;letter-spacing:.01em;color:var(--accent);text-decoration:none;display:inline-flex;gap:6px;align-items:center;width:fit-content}
+  .link{font-family:var(--mono);font-size:12.5px;color:var(--accent);text-decoration:none;display:inline-flex;gap:6px;align-items:center;width:fit-content}
   .link .a2{transition:transform .2s var(--ease)}
   .link:hover .a2{transform:translateX(4px)}
   .link.muted{color:var(--muted);cursor:default}
   .feature-side{display:flex;flex-direction:column;gap:14px;height:100%}
- 
-  /* ---------- experience timeline ---------- */
+
+  /* experience — connected thread */
   .xp{position:relative}
-  .role{display:grid;grid-template-columns:210px 1fr;gap:clamp(16px,3vw,44px);padding:28px 0;border-top:1px solid var(--line);transition:background .3s var(--ease)}
-  .role:first-child{border-top:none}
-  .role:hover{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 5%,transparent),transparent 70%)}
-  .role .when{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);letter-spacing:.005em}
+  .role{display:grid;grid-template-columns:160px 1fr;gap:clamp(16px,3vw,40px);position:relative}
+  .role .meta{text-align:right;padding-top:1px}
+  .role .when{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)}
   .role .org{font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:6px}
+  .role .body{position:relative;padding:0 0 40px 36px;border-left:2px solid var(--line-strong)}
+  .role:last-child .body{padding-bottom:4px}
+  .role .body::before{content:"";position:absolute;left:-8px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--paper);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+  .role:hover .body::before{transform:scale(1.3);box-shadow:0 0 0 4px var(--paper),0 0 0 8px color-mix(in srgb,var(--accent) 22%,transparent)}
   .role h3{font-family:var(--display);font-weight:400;font-size:clamp(21px,2.7vw,27px);margin:0 0 10px;line-height:1.12}
   .role h3 .tag-min{font-family:var(--mono);font-size:12px;color:var(--muted)}
   .role ul{margin:0;padding-left:1.05em}
   .role li{color:var(--ink-soft);font-size:15.5px;margin-bottom:7px;line-height:1.5}
   .role li::marker{color:var(--accent)}
-  @media (max-width:680px){.role{grid-template-columns:1fr;gap:8px}}
- 
-  /* ---------- skills + education ---------- */
+  @media (max-width:680px){
+    .role{display:block;position:relative;padding:0 0 40px 32px;border-left:2px solid var(--line-strong)}
+    .role:last-child{padding-bottom:4px}
+    .role::before{content:"";position:absolute;left:-8px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--paper)}
+    .role .body{border-left:none;padding:0}
+    .role:hover .body::before{content:none}
+    .role .meta{text-align:left;margin-bottom:10px}
+  }
+
+  /* skills + education */
   .cols2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,68px)}
   @media (max-width:780px){.cols2{grid-template-columns:1fr;gap:42px}}
   .skill-group{margin-bottom:26px}
@@ -197,16 +196,15 @@
   .edu-item .meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
   .honors{font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:4px}
   .course-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:24px 0 12px}
- 
-  /* ---------- about ---------- */
+
+  /* about */
   .about .lead-p{max-width:64ch;font-size:clamp(19px,2.4vw,23px);color:var(--ink);line-height:1.5;margin:0 0 20px}
   .about .lead-p::first-letter{font-family:var(--display);font-size:3.4em;line-height:.82;float:left;padding:6px 12px 0 0;color:var(--accent)}
   .about p{max-width:64ch;font-size:clamp(17px,2.1vw,19px);color:var(--ink-soft);margin:0 0 18px}
- 
-  /* ---------- contact (dark) ---------- */
+
+  /* contact (dark) */
   .contact{background:var(--d-bg);border-bottom:none;color:var(--d-text);overflow:hidden}
-  .contact::before{content:"";position:absolute;bottom:-30%;left:-6%;width:min(60vw,560px);height:min(60vw,560px);
-    background:radial-gradient(circle at 50% 50%, color-mix(in srgb,var(--d-accent) 22%,transparent),transparent 64%);filter:blur(24px);pointer-events:none}
+  .contact::before{content:"";position:absolute;bottom:-30%;left:-6%;width:min(60vw,560px);height:min(60vw,560px);background:radial-gradient(circle at 50% 50%, color-mix(in srgb,var(--d-accent) 20%,transparent),transparent 64%);filter:blur(26px);pointer-events:none}
   .contact .s-head .rule{background:var(--d-line)}
   .contact .s-head .num{color:var(--d-accent)}
   .contact .eyebrow{color:var(--d-muted)}
@@ -214,315 +212,299 @@
   .contact .lede{color:var(--d-muted)}
   .contact-grid{display:grid;grid-template-columns:1fr auto;gap:44px;align-items:end;position:relative}
   @media (max-width:680px){.contact-grid{grid-template-columns:1fr;gap:30px}}
+  .avatar{position:relative;width:94px;height:94px;border-radius:50%;overflow:hidden;flex:none;background:var(--d-bg-2);box-shadow:0 0 0 2px var(--d-accent),0 0 0 6px var(--d-bg);margin-bottom:24px}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .avatar-fallback{width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--display);font-size:36px;color:var(--d-accent);display:none}
   .contact-links{display:flex;flex-wrap:wrap;gap:12px}
   .contact .btn.primary{background:var(--d-text);color:var(--d-bg)}
   .contact .btn.primary:hover{background:var(--d-accent)}
   .contact .btn.ghost{border-color:var(--d-line);color:var(--d-text)}
   .contact .btn.ghost:hover{border-color:var(--d-text)}
- 
-  /* ---------- footer (dark) ---------- */
+
+  /* footer (dark) */
   footer.site{background:var(--d-bg-2);color:var(--d-muted);padding:40px 0 56px}
   footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:baseline}
   footer .mono{font-family:var(--mono);font-size:12px;color:var(--d-text)}
   footer .note{font-family:var(--mono);font-size:11.5px;color:var(--d-muted);max-width:54ch;line-height:1.5}
- 
-  /* ---------- reveal ---------- */
+
+  /* reveal */
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);transition-delay:calc(var(--i,0)*.07s)}
   .reveal.in{opacity:1;transform:none}
- 
+
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
     .reveal,.hv{opacity:1;transform:none;filter:none;animation:none;transition:none}
-    .hero-glow,.scroll-cue .ln::after,.badge.review::before,.contact::before{animation:none}
-    .btn,.card,.chip,.signals li,.role,.tag,.nav-links a::after{transition:none}
+    .hero-glow,.scroll-arrow svg,.badge.review::before,.contact::before{animation:none}
+    .btn,.card,.chip,.signals li,.role,.tag,.nav-links a::after,.role .body::before{transition:none}
   }
 </style>
 </head>
- 
+
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
- 
+
 <header class="site" id="header">
-  <div class="wrap nav">
-    <a class="brand" href="#top">Mahmmod Abuhani<span class="dot">.</span></a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">menu</button>
-    <nav class="nav-links" id="nav-links" aria-label="Primary">
-      <a href="#work">work</a>
-      <a href="#experience">experience</a>
-      <a href="#skills">skills</a>
-      <a href="#about">about</a>
-      <a href="#contact">contact</a>
-    </nav>
-  </div>
+<div class="wrap nav">
+<a class="brand" href="#top">Mahmmod Abuhani<span class="dot">.</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav-links">menu</button>
+<nav class="nav-links" id="nav-links" aria-label="Primary">
+<a href="#work">work</a>
+<a href="#experience">experience</a>
+<a href="#skills">skills</a>
+<a href="#about">about</a>
+<a href="#contact">contact</a>
+</nav>
+</div>
 </header>
- 
+
 <main id="main">
-  <section class="hero" id="top" aria-label="Introduction">
-    <span class="hero-glow" aria-hidden="true"></span>
-    <div class="wrap">
-      <p class="kicker hv d1">Lake Forest College · Data Science (Computer Science concentration)</p>
-      <h1 class="hv d2">Building applied analytics, data systems, and <em>policy research</em>.</h1>
-      <p class="intro hv d3">I turn messy records, research questions, and operational data into structured analysis, reports, and portfolio-ready systems — from SQL databases to machine-learning notebooks to public-data policy work.</p>
-      <ul class="signals hv d4">
-        <li>SQL &amp; data systems</li>
-        <li>Python analytics &amp; ML</li>
-        <li>Policy research &amp; reporting</li>
-      </ul>
-      <div class="cta-row hv d5">
-        <a class="btn primary magnetic" href="#work">View projects <span class="arw">→</span></a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
-        <span class="resume-note">résumé available on request</span>
-      </div>
-      <div class="scroll-cue hv d6"><span class="ln"></span> scroll</div>
-    </div>
-  </section>
- 
-  <section id="work" aria-labelledby="work-h">
-    <div class="wrap">
-      <div class="s-head reveal"><span class="num">01</span><span class="eyebrow">Selected projects</span><span class="rule"></span></div>
-      <h2 class="sect reveal" id="work-h">Work that shows the workflow, not just the result.</h2>
-      <p class="lede reveal" style="margin-bottom:38px">A mix of public-safe packages, curated coursework, and research in progress. The status labels are honest — some repositories are ready to read, others are still under review or at the proposal stage.</p>
- 
-      <div class="grid">
-        <article class="card feature reveal" style="--i:0">
-          <span class="idx">01</span>
-          <div>
-            <div class="topline"><h3>SportLFC — Data Systems &amp; Database App</h3><span class="badge ok">Public-safe package</span></div>
-            <p style="margin-top:14px">A SQL and data-systems project for a youth sports league. A normalized relational schema — 14 core tables plus a <code>PlayerFees</code> view — backs role-aware Player, Coach, and Admin workflows, with seed data and analytics queries across registration, rosters, equipment, coaches, and fees. Built on PHP/MySQL with <code>mysqli</code> prepared statements and validation for rosters, equipment, and coach assignments, plus reporting queries for popular sports, roster utilization, coach workload, fee summaries, and equipment revenue. Synthetic demo data — not a production app.</p>
-          </div>
-          <div class="feature-side">
-            <div class="tags">
-              <span class="tag">SQL</span><span class="tag">MySQL / MariaDB</span><span class="tag">Relational design</span><span class="tag">PHP</span><span class="tag">Prepared statements</span><span class="tag">Reporting queries</span>
-            </div>
-            <span class="link muted">Repository link pending final public review</span>
-          </div>
-        </article>
- 
-        <article class="card c-3 reveal" style="--i:1">
-          <span class="idx">02</span>
-          <div class="topline"><h3>Data Center Environmental Governance</h3><span class="badge review">Review in progress</span></div>
-          <p>An applied policy-analytics project on data-center energy use, digital waste, and environmental justice. Uses public data (ENERGY STAR, EJScreen, GHGRP, ECHO-style) with Python analysis, regression modeling, robustness checks, visualization, and policy writing.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Regression</span><span class="tag">EJ analysis</span><span class="tag">Public data</span><span class="tag">Policy</span></div>
-          <span class="link muted">Available on request — under review for release</span>
-        </article>
- 
-        <article class="card c-3 reveal" style="--i:2">
-          <span class="idx">03</span>
-          <div class="topline"><h3>Machine Learning Notebook Portfolio</h3><span class="badge found">Curated coursework</span></div>
-          <p>Classroom-scale Jupyter notebooks covering classical ML workflows: decision trees and random forests, k-nearest-neighbors classification, k-means clustering, PCA visualization, and linear/quadratic regression comparisons. Built mostly on scikit-learn or synthetic datasets, outputs stripped for clean review.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Classification</span><span class="tag">Clustering</span><span class="tag">PCA</span></div>
-          <span class="link muted">Repository link pending final public review</span>
-        </article>
- 
-        <article class="card c-2 reveal" style="--i:3">
-          <span class="idx">04</span>
-          <div class="topline"><h3>Numerical Methods in Python</h3><span class="badge found">Coursework</span></div>
-          <p>Scientific computing: Newton and secant root finding, explicit/implicit Euler, RK4, Taylor approximation, interpolation, and regression-style experiments. Reusable scripts (<code>src/roots.py</code>, <code>src/ode_solver.py</code>) in NumPy, SciPy, SymPy, Matplotlib.</p>
-          <div class="tags"><span class="tag">NumPy</span><span class="tag">SciPy</span><span class="tag">SymPy</span></div>
-          <span class="link muted">Repository link pending final public review</span>
-        </article>
- 
-        <article class="card c-2 reveal" style="--i:4">
-          <span class="idx">05</span>
-          <div class="topline"><h3>Java CS Foundations</h3><span class="badge found">Foundations</span></div>
-          <p>Introductory Java console programs showing clean fundamentals — control flow, loops, arrays, helper methods, input handling, validation, and formatting — with a dependency-free assertion-based test harness.</p>
-          <div class="tags"><span class="tag">Java</span><span class="tag">Testing basics</span><span class="tag">Validation</span></div>
-          <span class="link muted">Repository link pending final public review</span>
-        </article>
- 
-        <article class="card c-2 reveal" style="--i:5">
-          <span class="idx">06</span>
-          <div class="topline"><h3>Cook County Fairness Audit</h3><span class="badge plan">Proposal</span></div>
-          <p>A planned civic data-science audit framing fairness questions in the felony sentencing pipeline — emphasis on research design, ethics, and audit methodology. Designed and proposed; implementation pending data licensing and privacy review.</p>
-          <div class="tags"><span class="tag">Research design</span><span class="tag">Ethics</span><span class="tag">Fairness</span></div>
-          <span class="link muted">Proposal stage — not a completed audit</span>
-        </article>
-      </div>
-    </div>
-  </section>
- 
-  <section id="experience" aria-labelledby="xp-h">
-    <div class="wrap">
-      <div class="s-head reveal"><span class="num">02</span><span class="eyebrow">Experience</span><span class="rule"></span></div>
-      <h2 class="sect reveal" id="xp-h">Real data, reporting, and research operations.</h2>
- 
-      <div class="xp">
-        <div class="role reveal" style="--i:0">
-          <div class="meta"><div class="when">Aug 2025 — Present</div><div class="org">Forester F.A.N. Club</div></div>
-          <div><h3>Data &amp; Marketing Analyst <span class="tag-min">(formerly Intern)</span></h3>
-            <ul><li>Managed member records in Slate and tracked engagement, attendance, and budget data.</li>
-            <li>Supported reporting for Homecoming and NCAA conference events; produced visualizations and summary tables.</li>
-            <li>Translated findings into marketing-allocation recommendations.</li></ul></div>
-        </div>
-        <div class="role reveal" style="--i:1">
-          <div class="meta"><div class="when">May 2025 — Present</div><div class="org">Lake Forest College</div></div>
-          <div><h3>Research Assistant → Teaching Assistant</h3>
-            <ul><li>Supported case-study research across seven International Humanitarian Law principles.</li>
-            <li>Organized qualitative legal sources into structured comparative datasets.</li>
-            <li>Tracked performance data across 200+ student submissions and supported faculty assessment design.</li></ul></div>
-        </div>
-        <div class="role reveal" style="--i:2">
-          <div class="meta"><div class="when">May 2025 — Dec 2025</div><div class="org">Office of Intercultural Relations</div></div>
-          <div><h3>International Student Support Assistant</h3>
-            <ul><li>Maintained immigration and enrollment records for 300+ F-1 international students.</li>
-            <li>Audited financial-eligibility documentation.</li>
-            <li>Identified discrepancies and helped resolve incomplete records.</li></ul></div>
-        </div>
-        <div class="role reveal" style="--i:3">
-          <div class="meta"><div class="when">Feb 2025 — May 2025</div><div class="org">Sweet Water Foundation</div></div>
-          <div><h3>Regenerative Neighborhood Research Intern</h3>
-            <ul><li>Conducted comparative research on urban ecological systems in under-resourced Chicago and Pittsburgh neighborhoods.</li>
-            <li>Applied a standardized data-collection framework to inform strategic planning.</li></ul></div>
-        </div>
-        <div class="role reveal" style="--i:4">
-          <div class="meta"><div class="when">May 2025 — Present</div><div class="org">International Students Association</div></div>
-          <div><h3>Vice President</h3>
-            <ul><li>Led the One World fundraiser at Gorton Center, raising $5,000 for the F-1 student emergency fund.</li>
-            <li>Introduced digital tracking systems for membership and event-planning records.</li></ul></div>
-        </div>
-        <div class="role reveal" style="--i:5">
-          <div class="meta"><div class="when">Sep 2025 — Present</div><div class="org">Public Policy Analysis Challenge</div></div>
-          <div><h3>White Paper Author</h3>
-            <ul><li>Authored a federal proposal on data-center emissions and digital carbon taxation.</li>
-            <li>Analyzed bot-traffic datasets and built Chart.js visualizations.</li></ul></div>
-        </div>
-      </div>
-    </div>
-  </section>
- 
-  <section id="skills" aria-labelledby="sk-h">
-    <div class="wrap">
-      <div class="s-head reveal"><span class="num">03</span><span class="eyebrow">Skills &amp; education</span><span class="rule"></span></div>
-      <h2 class="sect reveal" id="sk-h">Tools, languages, and training.</h2>
-      <div class="cols2">
-        <div class="reveal">
-          <div class="skill-group"><h4>Data &amp; analytics</h4>
-            <div class="chips"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">Excel</span><span class="chip">Data cleaning</span><span class="chip">Descriptive statistics</span><span class="chip">Regression</span><span class="chip">Reporting workflows</span></div></div>
-          <div class="skill-group"><h4>BI &amp; visualization</h4>
-            <div class="chips"><span class="chip">Slate</span><span class="chip">Google Sheets</span><span class="chip">Chart.js</span><span class="chip">Matplotlib</span><span class="chip">Tableau (intro)</span></div></div>
-          <div class="skill-group"><h4>Programming &amp; tools</h4>
-            <div class="chips"><span class="chip">Java</span><span class="chip">PHP</span><span class="chip">MySQL / MariaDB</span><span class="chip">HTML / CSS</span><span class="chip">Git / GitHub</span><span class="chip">Microsoft Office</span><span class="chip">Google Workspace</span><span class="chip">Canva</span></div></div>
-          <div class="skill-group"><h4>Languages</h4>
-            <div class="chips"><span class="chip">Arabic — native</span><span class="chip">English — fluent</span><span class="chip">Italian — intermediate</span><span class="chip">Spanish — intermediate</span><span class="chip">Hebrew — beginner</span></div></div>
-        </div>
-        <div class="reveal">
-          <div class="edu-item"><h4>Lake Forest College</h4>
-            <div class="sub">B.A. in Data Science with Computer Science concentration. Minors in Economics and Sociology &amp; Anthropology.</div>
-            <div class="meta">Lake Forest, IL · Expected December 2027</div><div class="honors">Presidential Scholarship</div></div>
-          <div class="edu-item"><h4>United World College of the Adriatic</h4>
-            <div class="sub">International Baccalaureate Diploma.</div>
-            <div class="meta">Duino, Italy · Aug 2021 — May 2023</div><div class="honors">Davis UWC Scholar</div></div>
-          <div class="course-label">Selected coursework</div>
-          <div class="chips"><span class="chip">Statistics</span><span class="chip">Applied Statistics</span><span class="chip">Microeconomics</span><span class="chip">Macroeconomics</span><span class="chip">Data Structures (CS II)</span><span class="chip">Programming for Data Applications</span><span class="chip">Computer Science I</span><span class="chip">Intro to Database Systems</span><span class="chip">Intro to Computational Math</span><span class="chip">Calculus I</span><span class="chip">Research Methods</span><span class="chip">Data Analytics using Excel</span><span class="chip">Principles of Economics</span><span class="chip">Sociology &amp; Anthropology</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
- 
-  <section id="about" class="about" aria-labelledby="ab-h">
-    <div class="wrap">
-      <div class="s-head reveal"><span class="num">04</span><span class="eyebrow">About</span><span class="rule"></span></div>
-      <h2 class="sect reveal" id="ab-h">Where structured data meets real decisions.</h2>
-      <p class="lead-p reveal">I'm a data science student at Lake Forest College, concentrating in computer science with minors in economics and sociology &amp; anthropology. My work sits where structured data meets real decisions — relational databases and SQL, Python analysis and machine-learning notebooks, numerical methods, and policy research grounded in public data.</p>
-      <p class="reveal">Across roles in athletics analytics, international-student services, and community research, I've focused on record accuracy, clear reporting, and turning evidence into recommendations stakeholders can act on. I like the unglamorous parts — clean schemas, reproducible scripts, audited records — because that's what makes the analysis trustworthy.</p>
-      <p class="reveal">I came to data science from an international background: an IB diploma in Italy and several working languages, which shapes how I read the context behind the numbers.</p>
-    </div>
-  </section>
- 
-  <section id="contact" class="contact" aria-labelledby="ct-h">
-    <div class="wrap">
-      <div class="s-head reveal"><span class="num">05</span><span class="eyebrow">Contact</span><span class="rule"></span></div>
-      <div class="contact-grid">
-        <div>
-          <h2 class="sect reveal" id="ct-h">Open to analytics and data internships.</h2>
-          <p class="lede reveal">Business / data analyst, analytics intern, operations analytics, data systems, or policy analytics — available for 2026 and 2027 roles, and happy to talk through any of it.</p>
-        </div>
-        <div class="contact-links reveal">
-          <a class="btn primary magnetic" href="https://www.linkedin.com/in/mahmmodabuhani" target="_blank" rel="noopener">LinkedIn <span class="arw">→</span></a>
-          <a class="btn ghost" href="https://github.com/MahmmodAbuhani" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="hero" id="top" aria-label="Introduction">
+<span class="hero-glow" aria-hidden="true"></span>
+<div class="wrap">
+<p class="kicker hv d1">Lake Forest College · Data Science (Computer Science concentration)</p>
+<h1 class="name hv d2">Mahmmod Abuhani</h1>
+<p class="role-line hv d3">Building applied analytics, data systems, and <em>strategy research</em>.</p>
+<p class="intro hv d4">What drives me is the fine-tuning — turning complicated, messy data across sectors into clear, accessible insight that can change people's lives, their businesses, and the choices they make.</p>
+<ul class="signals hv d5">
+<li>SQL &amp; data systems</li>
+<li>Python analytics &amp; ML</li>
+<li>Insight &amp; reporting</li>
+</ul>
+<div class="cta-row hv d6">
+<a class="btn primary magnetic" href="#work">View projects <span class="arw">→</span></a>
+<a class="btn ghost" href="#contact">Get in touch</a>
+<span class="resume-note">résumé available on request</span>
+</div>
+<div class="hv d7">
+<a class="scroll-arrow" href="#work" aria-label="Scroll to projects">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+</a>
+</div>
+</div>
+</section>
+
+<!-- WORK -->
+<section id="work" aria-labelledby="work-h">
+<div class="wrap">
+<div class="s-head reveal"><span class="num">01</span><span class="eyebrow">Selected projects</span><span class="rule"></span></div>
+<h2 class="sect reveal" id="work-h">Work that shows the workflow, not just the result.</h2>
+<p class="lede reveal" style="margin-bottom:38px">A mix of public-safe packages, curated coursework, and research in progress. The status labels are honest — some repositories are ready to read, others are still under review or at the proposal stage.</p>
+
+<div class="grid">
+<article class="card feature reveal" style="--i:0">
+<span class="idx">01</span>
+<div>
+<div class="topline"><h3>SportLFC — Data Systems &amp; Database App</h3><span class="badge ok">Public-safe package</span></div>
+<p style="margin-top:14px">A SQL and data-systems project for a youth sports league. A normalized relational schema — 14 core tables plus a <code>PlayerFees</code> view — backs role-aware Player, Coach, and Admin workflows, with seed data and analytics queries across registration, rosters, equipment, coaches, and fees. Built on PHP/MySQL with <code>mysqli</code> prepared statements and validation for rosters, equipment, and coach assignments, plus reporting queries for popular sports, roster utilization, coach workload, fee summaries, and equipment revenue. Synthetic demo data — not a production app.</p>
+</div>
+<div class="feature-side">
+<div class="tags"><span class="tag">SQL</span><span class="tag">MySQL / MariaDB</span><span class="tag">Relational design</span><span class="tag">PHP</span><span class="tag">Prepared statements</span><span class="tag">Reporting queries</span></div>
+<a class="link" href="#">View repository <span class="a2">→</span></a>
+</div>
+</article>
+
+<article class="card c-3 reveal" style="--i:1">
+<span class="idx">02</span>
+<div class="topline"><h3>Data Center Environmental Governance</h3><span class="badge review">Review in progress</span></div>
+<p>An applied policy-analytics project on data-center energy use, digital waste, and environmental justice. Uses public data (ENERGY STAR, EJScreen, GHGRP, ECHO-style) with Python analysis, regression modeling, robustness checks, visualization, and policy writing.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">Regression</span><span class="tag">EJ analysis</span><span class="tag">Public data</span><span class="tag">Policy</span></div>
+<span class="link muted">Available on request — under review for release</span>
+</article>
+
+<article class="card c-3 reveal" style="--i:2">
+<span class="idx">03</span>
+<div class="topline"><h3>Machine Learning Notebook Portfolio</h3><span class="badge found">Curated coursework</span></div>
+<p>Classroom-scale Jupyter notebooks covering classical ML workflows: decision trees and random forests, k-nearest-neighbors classification, k-means clustering, PCA visualization, and linear/quadratic regression comparisons. Built mostly on scikit-learn or synthetic datasets, outputs stripped for clean review.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Classification</span><span class="tag">Clustering</span><span class="tag">PCA</span></div>
+<a class="link" href="#">View repository <span class="a2">→</span></a>
+</article>
+
+<article class="card c-2 reveal" style="--i:3">
+<span class="idx">04</span>
+<div class="topline"><h3>Numerical Methods in Python</h3><span class="badge found">Coursework</span></div>
+<p>Scientific computing: Newton and secant root finding, explicit/implicit Euler, RK4, Taylor approximation, interpolation, and regression-style experiments. Reusable scripts (<code>src/roots.py</code>, <code>src/ode_solver.py</code>) in NumPy, SciPy, SymPy, Matplotlib.</p>
+<div class="tags"><span class="tag">NumPy</span><span class="tag">SciPy</span><span class="tag">SymPy</span></div>
+<a class="link" href="#">View repository <span class="a2">→</span></a>
+</article>
+
+<article class="card c-2 reveal" style="--i:4">
+<span class="idx">05</span>
+<div class="topline"><h3>Java CS Foundations</h3><span class="badge found">Foundations</span></div>
+<p>Introductory Java console programs showing clean fundamentals — control flow, loops, arrays, helper methods, input handling, validation, and formatting — with a dependency-free assertion-based test harness.</p>
+<div class="tags"><span class="tag">Java</span><span class="tag">Testing basics</span><span class="tag">Validation</span></div>
+<a class="link" href="#">View repository <span class="a2">→</span></a>
+</article>
+
+<article class="card c-2 reveal" style="--i:5">
+<span class="idx">06</span>
+<div class="topline"><h3>Cook County Fairness Audit</h3><span class="badge plan">Proposal</span></div>
+<p>A planned civic data-science audit framing fairness questions in the felony sentencing pipeline — emphasis on research design, ethics, and audit methodology. Designed and proposed; implementation pending data licensing and privacy review.</p>
+<div class="tags"><span class="tag">Research design</span><span class="tag">Ethics</span><span class="tag">Fairness</span></div>
+<span class="link muted">Proposal stage — not a completed audit</span>
+</article>
+</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" aria-labelledby="xp-h">
+<div class="wrap">
+<div class="s-head reveal"><span class="num">02</span><span class="eyebrow">Experience</span><span class="rule"></span></div>
+<h2 class="sect reveal" id="xp-h">Real data, reporting, and research operations.</h2>
+
+<div class="xp">
+<div class="role reveal" style="--i:0">
+<div class="meta"><div class="when">Aug 2025 — Present</div><div class="org">Forester F.A.N. Club</div></div>
+<div class="body"><h3>Data &amp; Marketing Analyst <span class="tag-min">(formerly Intern)</span></h3>
+<ul><li>Managed member records in Slate and tracked engagement, attendance, and budget data.</li>
+<li>Supported reporting for Homecoming and NCAA conference events; produced visualizations and summary tables.</li>
+<li>Translated findings into marketing-allocation recommendations.</li></ul></div>
+</div>
+<div class="role reveal" style="--i:1">
+<div class="meta"><div class="when">May 2025 — Present</div><div class="org">Lake Forest College</div></div>
+<div class="body"><h3>Research Assistant → Teaching Assistant</h3>
+<ul><li>Supported case-study research across seven International Humanitarian Law principles.</li>
+<li>Organized qualitative legal sources into structured comparative datasets.</li>
+<li>Tracked performance data across 200+ student submissions and supported faculty assessment design.</li></ul></div>
+</div>
+<div class="role reveal" style="--i:2">
+<div class="meta"><div class="when">May 2025 — Dec 2025</div><div class="org">Office of Intercultural Relations</div></div>
+<div class="body"><h3>International Student Support Assistant</h3>
+<ul><li>Maintained immigration and enrollment records for 300+ F-1 international students.</li>
+<li>Audited financial-eligibility documentation.</li>
+<li>Identified discrepancies and helped resolve incomplete records.</li></ul></div>
+</div>
+<div class="role reveal" style="--i:3">
+<div class="meta"><div class="when">Feb 2025 — May 2025</div><div class="org">Sweet Water Foundation</div></div>
+<div class="body"><h3>Regenerative Neighborhood Research Intern</h3>
+<ul><li>Conducted comparative research on urban ecological systems in under-resourced Chicago and Pittsburgh neighborhoods.</li>
+<li>Applied a standardized data-collection framework to inform strategic planning.</li></ul></div>
+</div>
+<div class="role reveal" style="--i:4">
+<div class="meta"><div class="when">May 2025 — Present</div><div class="org">International Students Association</div></div>
+<div class="body"><h3>Vice President</h3>
+<ul><li>Led the One World fundraiser at Gorton Center, raising $5,000 for the F-1 student emergency fund.</li>
+<li>Introduced digital tracking systems for membership and event-planning records.</li></ul></div>
+</div>
+<div class="role reveal" style="--i:5">
+<div class="meta"><div class="when">Sep 2025 — Present</div><div class="org">Public Policy Analysis Challenge</div></div>
+<div class="body"><h3>White Paper Author</h3>
+<ul><li>Authored a federal proposal on data-center emissions and digital carbon taxation.</li>
+<li>Analyzed bot-traffic datasets and built Chart.js visualizations.</li></ul></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SKILLS + EDUCATION -->
+<section id="skills" aria-labelledby="sk-h">
+<div class="wrap">
+<div class="s-head reveal"><span class="num">03</span><span class="eyebrow">Skills &amp; education</span><span class="rule"></span></div>
+<h2 class="sect reveal" id="sk-h">Tools, languages, and training.</h2>
+<div class="cols2">
+<div class="reveal">
+<div class="skill-group"><h4>Data &amp; analytics</h4>
+<div class="chips"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">Excel</span><span class="chip">Data cleaning</span><span class="chip">Descriptive statistics</span><span class="chip">Regression</span><span class="chip">Reporting workflows</span></div></div>
+<div class="skill-group"><h4>BI &amp; visualization</h4>
+<div class="chips"><span class="chip">Slate</span><span class="chip">Google Sheets</span><span class="chip">Chart.js</span><span class="chip">Matplotlib</span><span class="chip">Tableau (intro)</span></div></div>
+<div class="skill-group"><h4>Programming &amp; tools</h4>
+<div class="chips"><span class="chip">Java</span><span class="chip">PHP</span><span class="chip">MySQL / MariaDB</span><span class="chip">HTML / CSS</span><span class="chip">Git / GitHub</span><span class="chip">Microsoft Office</span><span class="chip">Google Workspace</span><span class="chip">Canva</span></div></div>
+<div class="skill-group"><h4>Languages</h4>
+<div class="chips"><span class="chip">Arabic — native</span><span class="chip">English — fluent</span><span class="chip">Italian — intermediate</span><span class="chip">Spanish — intermediate</span><span class="chip">Hebrew — beginner</span></div></div>
+</div>
+<div class="reveal">
+<div class="edu-item"><h4>Lake Forest College</h4>
+<div class="sub">B.A. in Data Science with Computer Science concentration, Economics minor.</div>
+<div class="meta">Lake Forest, IL · Expected December 2027</div><div class="honors">Presidential Scholarship</div></div>
+<div class="edu-item"><h4>United World College of the Adriatic</h4>
+<div class="sub">International Baccalaureate Diploma.</div>
+<div class="meta">Duino, Italy · Aug 2021 — May 2023</div><div class="honors">Davis UWC Scholar</div></div>
+<div class="course-label">Selected coursework</div>
+<div class="chips"><span class="chip">Statistics</span><span class="chip">Applied Statistics</span><span class="chip">Microeconomics</span><span class="chip">Macroeconomics</span><span class="chip">Data Structures (CS II)</span><span class="chip">Programming for Data Applications</span><span class="chip">Computer Science I</span><span class="chip">Intro to Database Systems</span><span class="chip">Intro to Computational Math</span><span class="chip">Calculus I</span><span class="chip">Research Methods</span><span class="chip">Data Analytics using Excel</span><span class="chip">Principles of Economics</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about" aria-labelledby="ab-h">
+<div class="wrap">
+<div class="s-head reveal"><span class="num">04</span><span class="eyebrow">About</span><span class="rule"></span></div>
+<h2 class="sect reveal" id="ab-h">Where structured data meets real decisions.</h2>
+<p class="lead-p reveal">I'm a data science student at Lake Forest College, concentrating in computer science with a minor in economics. My work sits where structured data meets real decisions — relational databases and SQL, Python analysis and machine-learning notebooks, numerical methods, and research grounded in public data.</p>
+<p class="reveal">Across roles in athletics analytics, international-student services, and community research, I've focused on record accuracy, clear reporting, and turning evidence into recommendations stakeholders can act on. I like the unglamorous parts — clean schemas, reproducible scripts, audited records — because that's what makes the analysis trustworthy.</p>
+<p class="reveal">I came to data science from an international background: an IB diploma in Italy and several working languages, which shapes how I read the context behind the numbers.</p>
+</div>
+</section>
+
+<!-- CONTACT (dark) -->
+<section id="contact" class="contact" aria-labelledby="ct-h">
+<div class="wrap">
+<div class="s-head reveal"><span class="num">05</span><span class="eyebrow">Contact</span><span class="rule"></span></div>
+<div class="contact-grid">
+<div>
+<!-- PHOTO: drop a square profile.jpg into the repo root and it appears here automatically.
+               Until then, your initials show instead of a broken image. -->
+<div class="avatar reveal">
+<img src="profile.jpg" alt="Mahmmod Abuhani" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="avatar-fallback" aria-hidden="true">MA</span>
+</div>
+<h2 class="sect reveal" id="ct-h">Open to analytics and data internships.</h2>
+<p class="lede reveal">Business / data analyst, analytics intern, operations analytics, data systems, or strategy analytics — available for 2026 and 2027 roles, and happy to talk through any of it.</p>
+</div>
+<div class="contact-links reveal">
+<!-- EMAIL: replace the address below with your real email. -->
+<a class="btn primary magnetic" href="mailto:your.email@example.com">Send me an email <span class="arw">→</span></a>
+<a class="btn ghost" href="https://www.linkedin.com/in/mahmmodabuhani" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn ghost" href="https://github.com/MahmmodAbuhani" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</div>
+</section>
 </main>
- 
+
 <footer class="site">
-  <div class="wrap row">
-    <span class="mono">© 2026 Mahmmod Abuhani</span>
-    <span class="note">Public content is based on approved claims and excludes private records, datasets, and documents. Project status labels are accurate as of last review.</span>
-  </div>
+<div class="wrap row">
+<span class="mono">© 2026 Mahmmod Abuhani</span>
+<span class="note">Public content is based on approved claims and excludes private records, datasets, and documents. Project status labels are accurate as of last review.</span>
+</div>
 </footer>
- 
+
 <script>
 (function(){
   "use strict";
-  var fine = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
- 
+  var fine=window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   var btn=document.querySelector(".menu-btn"), links=document.getElementById("nav-links");
   if(btn&&links){
-    btn.addEventListener("click",function(){
-      var open=links.classList.toggle("open");
-      btn.setAttribute("aria-expanded",open?"true":"false");
-      btn.textContent=open?"close":"menu";
-    });
-    links.addEventListener("click",function(e){
-      if(e.target.tagName==="A"&&links.classList.contains("open")){
-        links.classList.remove("open");btn.setAttribute("aria-expanded","false");btn.textContent="menu";
-      }
-    });
+    btn.addEventListener("click",function(){var open=links.classList.toggle("open");btn.setAttribute("aria-expanded",open?"true":"false");btn.textContent=open?"close":"menu";});
+    links.addEventListener("click",function(e){if(e.target.tagName==="A"&&links.classList.contains("open")){links.classList.remove("open");btn.setAttribute("aria-expanded","false");btn.textContent="menu";}});
   }
- 
+
   var bar=document.getElementById("progress"), header=document.getElementById("header");
-  function onScroll(){
-    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
-    var p=max>0?(h.scrollTop/max)*100:0;
-    if(bar) bar.style.width=p+"%";
-    if(header) header.classList.toggle("scrolled", h.scrollTop>10);
-  }
+  function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight,p=max>0?(h.scrollTop/max)*100:0;if(bar)bar.style.width=p+"%";if(header)header.classList.toggle("scrolled",h.scrollTop>10);}
   window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
- 
+
   var reveals=[].slice.call(document.querySelectorAll(".reveal"));
-  if(reduce||!("IntersectionObserver" in window)){
-    reveals.forEach(function(el){el.classList.add("in");});
-  }else{
-    var ro=new IntersectionObserver(function(es){
-      es.forEach(function(en){ if(en.isIntersecting){en.target.classList.add("in");ro.unobserve(en.target);} });
-    },{threshold:.12,rootMargin:"0px 0px -8% 0px"});
-    reveals.forEach(function(el){ro.observe(el);});
-  }
- 
+  if(reduce||!("IntersectionObserver" in window)){reveals.forEach(function(el){el.classList.add("in");});}
+  else{var ro=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");ro.unobserve(en.target);}});},{threshold:.12,rootMargin:"0px 0px -8% 0px"});reveals.forEach(function(el){ro.observe(el);});}
+
   var navMap={};
   document.querySelectorAll(".nav-links a").forEach(function(a){var id=a.getAttribute("href").replace("#","");if(id)navMap[id]=a;});
   if("IntersectionObserver" in window){
-    var so=new IntersectionObserver(function(es){
-      es.forEach(function(en){
-        if(en.isIntersecting){
-          Object.keys(navMap).forEach(function(k){navMap[k].classList.remove("active");});
-          var link=navMap[en.target.id]; if(link)link.classList.add("active");
-        }
-      });
-    },{threshold:.5});
+    var so=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){Object.keys(navMap).forEach(function(k){navMap[k].classList.remove("active");});var link=navMap[en.target.id];if(link)link.classList.add("active");}});},{threshold:.5});
     document.querySelectorAll("main section[id]").forEach(function(s){so.observe(s);});
   }
- 
+
   if(fine&&!reduce){
     document.querySelectorAll(".card").forEach(function(c){
-      c.addEventListener("pointermove",function(e){
-        var r=c.getBoundingClientRect();
-        c.style.setProperty("--mx",(e.clientX-r.left)+"px");
-        c.style.setProperty("--my",(e.clientY-r.top)+"px");
-      });
+      c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px");});
     });
- 
     document.querySelectorAll(".btn.magnetic").forEach(function(b){
-      b.addEventListener("pointermove",function(e){
-        var r=b.getBoundingClientRect();
-        var dx=(e.clientX-(r.left+r.width/2))*.18, dy=(e.clientY-(r.top+r.height/2))*.3;
-        dx=Math.max(-7,Math.min(7,dx)); dy=Math.max(-7,Math.min(7,dy));
-        b.style.transform="translate("+dx+"px,"+dy+"px)";
-      });
+      b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect();var dx=(e.clientX-(r.left+r.width/2))*.18,dy=(e.clientY-(r.top+r.height/2))*.3;dx=Math.max(-7,Math.min(7,dx));dy=Math.max(-7,Math.min(7,dy));b.style.transform="translate("+dx+"px,"+dy+"px)";});
       b.addEventListener("pointerleave",function(){b.style.transform="";});
     });
   }
