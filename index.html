@@ -1,11 +1,9 @@
-
-raw
-Index · HTML
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f4f4ed">
 <title>Mahmmod Abuhani — Data &amp; Business Analytics</title>
 <meta name="description" content="Mahmmod Abuhani — B.A. Data Science student (Economics minor) at Lake Forest College: SQL data systems, Python and machine learning, numerical methods, and strategy research." />
  
@@ -46,7 +44,7 @@ Index · HTML
  
 /* ================= BASE ================= */
 *{box-sizing:border-box}
-html{scroll-padding-top:90px;scroll-behavior:smooth}
+html{scroll-padding-top:90px;scroll-behavior:smooth;background:#f4f4ed;overscroll-behavior-y:none}
 body{
   margin:0;background:var(--off);color:var(--green);
   font-family:var(--sans);font-size:1.05rem;line-height:1.25;
@@ -63,7 +61,7 @@ button{font-family:inherit}
  
 /* grain */
 body::after{
-  content:"";position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.28;mix-blend-mode:overlay;
+  content:"";position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.13;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   background-size:160px;
 }
@@ -83,7 +81,7 @@ body.nav-light .scroll-rail{color:var(--off)}
 .navshell{position:fixed;inset:0 0 auto 0;z-index:240;height:74px;pointer-events:none}
 .navshell>*{pointer-events:auto}
 .nav-logo{position:absolute;left:15px;top:15px;height:53px;display:flex;align-items:center;padding:0 18px;border-radius:var(--r-l);
-  background:color-mix(in srgb,var(--green) 8%,transparent);backdrop-filter:blur(6px);
+  background:color-mix(in srgb,var(--green) 10%,var(--off));
   font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);transition:background .45s var(--ease),color .45s var(--ease)}
 .nav-mark{position:absolute;left:50%;top:20px;transform:translateX(-50%);width:34px;height:34px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;background:var(--green);color:var(--lime);
@@ -154,35 +152,37 @@ body.menu-open .menu-links a:nth-child(5) .inner{transition-delay:.44s}
 .hero-name{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:center;gap:1vh;pointer-events:none;overflow:clip}
 .hero-name .row{white-space:nowrap;font-weight:850;font-size:clamp(90px,17.5vw,260px);line-height:.86;letter-spacing:-.045em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--green) 38%,transparent);will-change:transform}
 .hero-name .row.solid{color:color-mix(in srgb,var(--green) 14%,transparent);-webkit-text-stroke:0}
-.hero-portrait{position:relative;z-index:2;width:min(29vw,380px);margin-top:4vh;will-change:transform}
+.hero-portrait{position:relative;z-index:2;width:min(29vw,380px,calc((100vh - 350px)*.8));margin-top:5vh;will-change:transform}
 .hero-portrait .ph{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-l) var(--r-l) var(--r-s) var(--r-s);
   filter:saturate(.94);box-shadow:0 60px 90px -50px rgba(40,44,32,.55)}
 .hero-portrait .ph-fallback{display:none;width:100%;aspect-ratio:4/5;border-radius:var(--r-l) var(--r-l) var(--r-s) var(--r-s);
   background:var(--green);color:var(--lime);align-items:center;justify-content:center;font-family:var(--disp);font-style:italic;font-weight:700;font-size:5rem}
 .hero-portrait.noimg .ph{display:none}
 .hero-portrait.noimg .ph-fallback{display:flex}
-.hero-kicker{position:absolute;z-index:3;top:92px;left:50%;transform:translateX(-50%);text-align:center;color:var(--tint-2)}
+.hero-kicker{position:absolute;z-index:3;top:86px;left:50%;transform:translateX(-50%);text-align:center;color:var(--green);width:max-content;max-width:92vw}
+.hero-kicker .label{font-weight:800;font-size:.78rem;letter-spacing:.16em}
 .hero-kicker .label{display:block}
 /* current-focus card, bottom-left */
-.focus-card{position:absolute;z-index:3;left:var(--pad);bottom:var(--pad);width:7.4375rem;min-height:11rem;
+.focus-card{position:absolute;z-index:3;left:var(--pad);bottom:var(--pad);width:11.15rem;min-height:10rem;
   background:var(--green);color:var(--off);border-radius:var(--r-s);padding:.9rem .8rem;
   display:flex;flex-direction:column;gap:.55rem;
   clip-path:ellipse(100% 0% at 50% 0);transition:clip-path .9s var(--ease) .5s}
 body.loaded .focus-card{clip-path:ellipse(100% 120% at 50% 0)}
 .focus-card .label{color:var(--lime);font-size:.56rem}
-.focus-card .big{font-weight:800;font-size:.82rem;line-height:1.05;text-transform:uppercase;letter-spacing:-.01em}
+.focus-card .big{font-weight:800;font-size:.95rem;line-height:1.05;text-transform:uppercase;letter-spacing:-.01em}
 .focus-card hr{border:0;border-top:1px solid rgba(244,244,237,.2);margin:.1rem 0}
 .focus-card .sub{font-size:.66rem;color:var(--owg-2);line-height:1.3}
 .focus-card .dotrow{display:flex;align-items:center;gap:.4rem;font-size:.6rem;color:var(--owg-1)}
 .focus-card .dotrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-/* hero hint + easter egg */
-.hero-hint{position:absolute;z-index:3;right:var(--pad);bottom:var(--pad);text-align:right;color:var(--tint-2);max-width:30ch;font-size:.68rem;line-height:1.6;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
-.hero-hint em{font-family:var(--disp);font-style:italic;text-transform:none;letter-spacing:0;font-size:.82rem}
-.egg-btn{display:inline-block;margin-top:.5rem;background:none;border:1px solid color-mix(in srgb,var(--green) 30%,transparent);border-radius:var(--r-l);
-  padding:.5rem .9rem;font-weight:700;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);cursor:pointer;
-  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
-.egg-btn:hover{background:var(--green);color:var(--lime);border-color:var(--green)}
+/* rotating scroll cue */
+.scroll-cue{position:absolute;z-index:3;left:50%;bottom:calc(var(--pad)*1.2);transform:translateX(-50%);width:96px;height:96px;color:var(--green)}
+.scroll-cue svg{position:absolute;inset:0;width:100%;height:100%;animation:cueSpin 16s linear infinite;overflow:visible}
+.scroll-cue text{font-family:var(--sans);font-weight:800;font-size:8.6px;letter-spacing:.18em;fill:currentColor;text-transform:uppercase}
+.scroll-cue .arr{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:1.3rem;font-weight:700;animation:cueBob 1.6s var(--ease) infinite}
+@keyframes cueSpin{to{transform:rotate(360deg)}}
+@keyframes cueBob{0%,100%{transform:translate(-50%,-58%)}50%{transform:translate(-50%,-42%)}}
+@media (max-width:991px){.scroll-cue{width:74px;height:74px;bottom:var(--pad)}.scroll-cue text{font-size:12px}}
 /* physical chips (easter egg) */
 .skillfield{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden}
 .fchip{position:absolute;left:0;top:0;pointer-events:auto;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none;will-change:transform;
@@ -191,11 +191,13 @@ body.loaded .focus-card{clip-path:ellipse(100% 120% at 50% 0)}
   transition:background .25s var(--ease),color .25s var(--ease)}
 .fchip:hover{color:var(--lime)}
 .fchip.drag{cursor:grabbing;background:var(--lime);color:var(--green);border-color:var(--lime);transition:none}
+@media (max-width:991px){.fchip{font-size:10px;padding:7px 11px}}
  
 /* ================= SECTION SHELL ================= */
 .s{position:relative;overflow:clip}
 .s .strata{position:absolute;inset:-10% -5%;pointer-events:none;opacity:.1;z-index:0}
-.s .strata svg{position:absolute;inset:0;width:100%;height:100%;transform-origin:50% 50%;animation:breathe 52s ease-in-out infinite alternate}
+.s .strata svg{position:absolute;inset:0;width:100%;height:100%;transform-origin:50% 50%;animation:breathe 52s ease-in-out infinite alternate;animation-play-state:paused}
+.s.on-screen .strata svg{animation-play-state:running}
 @keyframes breathe{from{transform:rotate(-1.2deg) scale(1)}to{transform:rotate(1.2deg) scale(1.07)}}
 .s-head{display:flex;align-items:baseline;gap:1rem;padding:0 calc(var(--pad)*2);max-width:1500px;margin:0 auto 1.6rem;width:100%}
 .s-head .num{font-family:var(--disp);font-style:italic;font-size:1rem;color:var(--lime-off)}
@@ -258,21 +260,24 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
 .spec:nth-child(4n+2),.spec:nth-child(4n+4){transform:translateY(237px)}
 .spec .base,.spec .rev{position:absolute;inset:0;border-radius:var(--r-s);overflow:hidden}
 .spec .base svg{position:absolute;inset:0;width:100%;height:100%}
-.spec .base img.proof{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left}
-.spec .rev{background:var(--green);color:var(--off);padding:1.1rem 1rem 2.9rem;display:flex;flex-direction:column;gap:.6rem;
+.spec .base img.proof{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s var(--ease)}
+.spec .base svg{transition:transform .6s var(--ease)}
+.spec:hover .base img.proof,.spec:hover .base svg{transform:scale(1.05)}
+.spec .rev{background:var(--green);color:var(--off);padding:1.2rem 1.1rem 3.4rem;display:flex;flex-direction:column;gap:.6rem;text-align:center;align-items:center;justify-content:center;
   clip-path:ellipse(100% 0% at 50% 0);transition:clip-path .7s var(--ease)}
 .spec:hover .rev,.spec.open .rev{clip-path:ellipse(100% 135% at 50% 0)}
 .spec .rev p{margin:0;font-size:.84rem;line-height:1.45;color:var(--owg-1)}
 .rev-link{display:inline-flex;align-items:center;gap:.45rem;margin-top:.2rem;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);border-bottom:1.5px solid var(--lime);padding-bottom:.2rem;width:max-content}
 .rev-link:hover{color:var(--off);border-color:var(--off)}
 .spec:focus-visible{outline:2px solid var(--lime-off);outline-offset:4px}
-.spec .rev .tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:.35rem}
+.spec .rev .tags{margin-top:.4rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center}
 .spec .rev .tags span{font-weight:700;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--tint-2);border-radius:99px;padding:.28rem .55rem;color:var(--owg-2)}
 .spec .frame{position:absolute;inset:0;pointer-events:none;z-index:3}
 .spec .frame path{fill:none;stroke:var(--tint-2);stroke-width:1.5;vector-effect:non-scaling-stroke}
 .spec .frame .hi{stroke:var(--lime-off);opacity:0;transition:opacity .45s var(--ease)}
 .spec:hover .frame .hi,.spec.open .frame .hi{opacity:1}
-.spec .tab{position:absolute;right:10px;bottom:8px;z-index:4;display:flex;align-items:baseline;gap:.5rem;height:2rem;align-items:center}
+.spec .tab{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:4;display:flex;align-items:center;gap:.55rem;padding:.45rem .95rem;border-radius:99px;background:rgba(244,244,237,.94);border:1px solid var(--tint-2);white-space:nowrap;transition:background .35s var(--ease),border-color .35s var(--ease)}
+.spec:hover .tab,.spec.open .tab{background:var(--green);border-color:var(--lime-off)}
 .spec .tab .name{font-weight:800;font-size:.78rem;letter-spacing:.02em;text-transform:uppercase}
 .spec .tab .yr{font-weight:700;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lime-off)}
 .spec:hover .tab .name,.spec.open .tab .name{color:var(--off)}
@@ -353,6 +358,7 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
 /* ================= RESPONSIVE (functional, not optimized) ================= */
 @media (max-width:991px){
   .nav-mark{display:none}
+  .focus-card{width:10rem}
   .nav-logo{font-size:11px;padding:0 12px;max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .menu-grid{grid-template-columns:1fr;align-content:center;gap:2rem}
   .menu-tiles{display:none}
@@ -399,7 +405,8 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
 .story-track{flex-wrap:wrap;gap:50px;padding:0 calc(var(--pad)*2);transform:none}
 .story-words{white-space:normal}
 .hero-track{height:auto}.hero-stage{position:relative}
-.menu,.nav-burger,.egg-btn,.scroll-rail{display:none}
+.menu,.nav-burger,.scroll-rail{display:none}
+.scroll-cue svg,.scroll-cue .arr{animation:none}
 </style></noscript>
 </head>
 <body>
@@ -453,7 +460,7 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
         <div class="row" id="nameRow1">MAHMMOD&nbsp;&nbsp;MAHMMOD&nbsp;&nbsp;MAHMMOD</div>
         <div class="row solid" id="nameRow2">ABUHANI&nbsp;&nbsp;ABUHANI&nbsp;&nbsp;ABUHANI</div>
       </div>
-      <h1 class="hero-kicker"><span class="label">Mahmmod Abuhani — Data &amp; Business Analytics</span><span class="label" style="opacity:.78">B.A. Data Science · Economics Minor · Lake Forest College</span></h1>
+      <h1 class="hero-kicker"><span class="label">Mahmmod Abuhani — Data &amp; Business Analytics</span><span class="label" style="color:var(--tint-2)">B.A. Data Science · Economics Minor · Lake Forest College</span></h1>
       <figure class="hero-portrait" id="heroPortrait">
         <img class="ph" src="assets/images/1765176317621.jpeg" alt="Portrait of Mahmmod Abuhani"
              onerror="this.closest('.hero-portrait').classList.add('noimg')">
@@ -466,10 +473,12 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
         <span class="sub">Business / data analyst · operations analytics · data systems</span>
         <span class="dotrow">Open to offers</span>
       </aside>
-      <div class="hero-hint">
-        <span aria-hidden="true"><em>a live contour map — hover bends it, click ripples it.</em><br>
-        scroll to enter the exhibit<br></span>
-        <button class="egg-btn" id="eggBtn" type="button">Release the toolkit</button>
+      <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <defs><path id="cuePath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+          <text textLength="231" lengthAdjust="spacingAndGlyphs"><textPath href="#cuePath" textLength="231" lengthAdjust="spacingAndGlyphs">SCROLL · ENTER THE EXHIBIT · SCROLL · ENTER THE EXHIBIT · </textPath></text>
+        </svg>
+        <span class="arr">&#8595;</span>
       </div>
       <div class="skillfield" id="skillfield" aria-hidden="true"></div>
     </section>
@@ -499,7 +508,7 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
         </div>
  
         <div class="story-item story-stat" data-par="-10">
-          <div class="v mono-num"><span data-count="300">0</span><b>+</b></div>
+          <div class="v mono-num"><span data-count="400">0</span><b>+</b></div>
           <div class="l label">F-1 student records audited</div>
         </div>
  
@@ -525,7 +534,7 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
             <div class="cap"><span class="label">May — Dec 2025</span><b class="label">Office of Intercultural Relations</b></div>
             <h3>International Student Support</h3>
             <ul>
-              <li>Immigration and enrollment records for 300+ F-1 students.</li>
+              <li>Immigration and enrollment records for 400+ F-1 students.</li>
               <li>Financial-eligibility documentation audited.</li>
               <li>Discrepancies identified; incomplete records resolved.</li>
             </ul>
@@ -549,7 +558,7 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
         </div>
  
         <div class="story-item story-visual photo" data-par="-3" style="margin-left:30px">
-          <span class="tag label" style="color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)">fig. 04 · One World — Gorton Center</span>
+          <span class="tag label" style="color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)">One World — Gorton Center</span>
           <img src="assets/images/WhatsApp%20Image%202025-11-19%20at%2022.47.11.jpeg" alt="The International Students Association team on stage at the One World event, Gorton Center" loading="lazy">
         </div>
  
@@ -629,14 +638,14 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
       <p class="reveal">Eight exhibits — public-safe packages, curated coursework, live research, and operational evidence. Status labeled honestly. Hover or press Enter to open a card; repository links where the work is public.</p>
     </div>
     <div class="spec-grid" id="specGrid">
-      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="SportLFC — Public repo. Press Enter to open the summary."><div class="base"><span data-art="spec1"></span><img class="proof" src="https://raw.githubusercontent.com/MahmmodAbuhani/sportlfc-data-systems/main/docs/screenshots/02-alex-dashboard.png" alt="" loading="lazy" onerror="this.remove()"></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Public repo</span></div><p>MySQL 8 + PHP registration system: 14 tables, overlapping Person &rarr; Player / Coach / Admin roles, and a derived FeesOwed view. Roster caps, head-coach and coach-eligibility rules enforced in SQL; data-quality checks run in CI on every push. Dockerized one-command setup, synthetic demo data.</p><a class="rev-link" href="https://github.com/MahmmodAbuhani/sportlfc-data-systems" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">&#8599;</span></a><div class="tags"><span>SQL</span><span>MySQL 8</span><span>PHP</span><span>Docker</span><span>CI</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">SportLFC</span><span class="yr">Public repo</span></div></article>
-      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="Data Center Governance — In review. Press Enter to open the summary."><div class="base"><span data-art="spec2"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">In review</span></div><p>Policy analytics on data-center energy use, digital waste, and environmental justice — regression modeling and robustness checks on public federal datasets, paired with policy writing.</p><div class="tags"><span>Python</span><span>Regression</span><span>EJ analysis</span><span>Policy</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">Data Center Governance</span><span class="yr">In review</span></div></article>
-      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="ML Notebooks — Coursework. Press Enter to open the summary."><div class="base"><span data-art="spec3"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Coursework</span></div><p>Classical ML workflows — classification, clustering, PCA, and regression comparisons across curated notebooks; decision trees, random forests, k-NN, and k-means on scikit-learn datasets.</p><div class="tags"><span>Python</span><span>scikit-learn</span><span>Clustering</span><span>PCA</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">ML Notebooks</span><span class="yr">Coursework</span></div></article>
-      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="Numerical Methods — Coursework. Press Enter to open the summary."><div class="base"><span data-art="spec4"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Coursework</span></div><p>Root-finding, ODE solvers, and approximation as reusable scripts: Newton and secant roots, explicit and implicit Euler, RK4, Taylor approximation, and interpolation in NumPy, SciPy, and SymPy.</p><div class="tags"><span>NumPy</span><span>SciPy</span><span>SymPy</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">Numerical Methods</span><span class="yr">Coursework</span></div></article>
-      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="Java Foundations — Coursework. Press Enter to open the summary."><div class="base"><span data-art="spec5"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Coursework</span></div><p>Clean Java fundamentals with a dependency-free test harness: control flow, arrays, helper methods, input handling, validation, and formatting verified with assertion-based tests.</p><div class="tags"><span>Java</span><span>Testing</span><span>Validation</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">Java Foundations</span><span class="yr">Coursework</span></div></article>
-      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="Cook County Audit — Proposal. Press Enter to open the summary."><div class="base"><span data-art="spec6"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Proposal</span></div><p>A proposed fairness audit of the felony sentencing pipeline — research design and ethics framing complete; implementation pending data licensing and privacy review. Not a completed audit.</p><div class="tags"><span>Research design</span><span>Ethics</span><span>Fairness</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">Cook County Audit</span><span class="yr">Proposal</span></div></article>
-      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="FAN Analytics — Experience. Press Enter to open the summary."><div class="base"><span data-art="spec7"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Experience</span></div><p>Operational analytics for the Forester F.A.N. Club: member records in Slate, engagement and budget tracking, event reporting, and marketing-allocation recommendations.</p><div class="tags"><span>Slate</span><span>Excel</span><span>Reporting</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">FAN Analytics</span><span class="yr">Experience</span></div></article>
-      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="IHL Research Dataset — Research ops. Press Enter to open the summary."><div class="base"><span data-art="spec8"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Research ops</span></div><p>Qualitative legal sources across seven International Humanitarian Law principles organized into structured comparative datasets, supporting faculty assessment design.</p><div class="tags"><span>Research ops</span><span>Datasets</span><span>Methods</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V78 L82 78 L82 92 Q82 99.2 78 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">IHL Research Dataset</span><span class="yr">Research ops</span></div></article>
+      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="SportLFC — Public repo. Press Enter to open the summary."><div class="base"><span data-art="spec1"></span><img class="proof" src="https://raw.githubusercontent.com/MahmmodAbuhani/sportlfc-data-systems/main/docs/screenshots/03-admin-analytics.png" alt="" loading="lazy" onerror="this.remove()"></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Public repo</span></div><p>MySQL 8 + PHP registration system: 14 tables, overlapping Person &rarr; Player / Coach / Admin roles, and a derived FeesOwed view. Roster caps, head-coach and coach-eligibility rules enforced in SQL; data-quality checks run in CI on every push. Dockerized one-command setup, synthetic demo data.</p><a class="rev-link" href="https://github.com/MahmmodAbuhani/sportlfc-data-systems" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">&#8599;</span></a><div class="tags"><span>SQL</span><span>MySQL 8</span><span>PHP</span><span>Docker</span><span>CI</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">SportLFC</span><span class="yr">Public repo</span></div></article>
+      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="Data Center Governance — In review. Press Enter to open the summary."><div class="base"><span data-art="spec2"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">In review</span></div><p>Policy analytics on data-center energy use, digital waste, and environmental justice — regression modeling and robustness checks on public federal datasets, paired with policy writing.</p><div class="tags"><span>Python</span><span>Regression</span><span>EJ analysis</span><span>Policy</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">Data Center Governance</span><span class="yr">In review</span></div></article>
+      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="ML Notebooks — Coursework. Press Enter to open the summary."><div class="base"><span data-art="spec3"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Coursework</span></div><p>Classical ML workflows — classification, clustering, PCA, and regression comparisons across curated notebooks; decision trees, random forests, k-NN, and k-means on scikit-learn datasets.</p><div class="tags"><span>Python</span><span>scikit-learn</span><span>Clustering</span><span>PCA</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">ML Notebooks</span><span class="yr">Coursework</span></div></article>
+      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="Numerical Methods — Coursework. Press Enter to open the summary."><div class="base"><span data-art="spec4"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Coursework</span></div><p>Root-finding, ODE solvers, and approximation as reusable scripts: Newton and secant roots, explicit and implicit Euler, RK4, Taylor approximation, and interpolation in NumPy, SciPy, and SymPy.</p><div class="tags"><span>NumPy</span><span>SciPy</span><span>SymPy</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">Numerical Methods</span><span class="yr">Coursework</span></div></article>
+      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="Java Foundations — Coursework. Press Enter to open the summary."><div class="base"><span data-art="spec5"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Coursework</span></div><p>Clean Java fundamentals with a dependency-free test harness: control flow, arrays, helper methods, input handling, validation, and formatting verified with assertion-based tests.</p><div class="tags"><span>Java</span><span>Testing</span><span>Validation</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">Java Foundations</span><span class="yr">Coursework</span></div></article>
+      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="Cook County Audit — Proposal. Press Enter to open the summary."><div class="base"><span data-art="spec6"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Proposal</span></div><p>A proposed fairness audit of the felony sentencing pipeline — research design and ethics framing complete; implementation pending data licensing and privacy review. Not a completed audit.</p><div class="tags"><span>Research design</span><span>Ethics</span><span>Fairness</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">Cook County Audit</span><span class="yr">Proposal</span></div></article>
+      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="FAN Analytics — Experience. Press Enter to open the summary."><div class="base"><span data-art="spec7"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Experience</span></div><p>Operational analytics for the Forester F.A.N. Club: member records in Slate, engagement and budget tracking, event reporting, and marketing-allocation recommendations.</p><div class="tags"><span>Slate</span><span>Excel</span><span>Reporting</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">FAN Analytics</span><span class="yr">Experience</span></div></article>
+      <article class="spec" tabindex="0" role="button" aria-expanded="false" aria-label="IHL Research Dataset — Research ops. Press Enter to open the summary."><div class="base"><span data-art="spec8"></span></div><div class="rev"><div class="cap"><span class="label" style="color:var(--lime)">Research ops</span></div><p>Qualitative legal sources across seven International Humanitarian Law principles organized into structured comparative datasets, supporting faculty assessment design.</p><div class="tags"><span>Research ops</span><span>Datasets</span><span>Methods</span></div></div><svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/><path class="hi" d="M4 .8 H96 Q99.2 .8 99.2 4 V96 Q99.2 99.2 96 99.2 H4 Q.8 99.2 .8 96 V4 Q.8 .8 4 .8 Z"/></svg><div class="tab"><span class="name">IHL Research Dataset</span><span class="yr">Research ops</span></div></article>
     </div>
   </section>
  
@@ -987,17 +996,17 @@ var TER = (function(){
   if(!cv) return null;
   var ctx = cv.getContext("2d");
   var W, H, dpr, cell, cols, rows, F, bump = 0;
-  var LEVELS = [-1.9,-1.5,-1.1,-.7,-.3,.1,.5,.9,1.3,1.7];
+  var LEVELS = [-1.8,-1.3,-.85,-.4,.05,.5,.95,1.4];
   function hx(h){ return [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16)]; }
   var LIGHT_LO = hx("#b4b8a5"), LIGHT_HI = hx("#282c20"), LIGHT_TOP = hx("#7a8a2a");
   var DARK_LO  = hx("#535450"), DARK_HI  = hx("#dde1d2"), DARK_TOP  = hx("#b2c73a");
   function mix(a, b, k){ return [a[0]+(b[0]-a[0])*k, a[1]+(b[1]-a[1])*k, a[2]+(b[2]-a[2])*k]; }
   function size(){
-    dpr = Math.min(window.devicePixelRatio || 1, 1.6);
+    dpr = Math.min(window.devicePixelRatio || 1, 1.3);
     W = cv.clientWidth; H = cv.clientHeight;
     cv.width = W * dpr; cv.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cell = 16;
+    cell = 18;
     cols = Math.ceil(W / cell) + 1; rows = Math.ceil(H / cell) + 1;
     F = new Float32Array((cols + 1) * (rows + 1));
   }
@@ -1069,93 +1078,140 @@ var TER = (function(){
   return {size:size, render:render, el:cv};
 })();
  
-/* ============ CHIPS EASTER EGG ============ */
+/* ============ TOOLKIT CHIPS: drop on load, stack in right-side columns ============ */
 var CHIPS = (function(){
   var box = document.getElementById("skillfield");
-  var btn2 = document.getElementById("eggBtn");
-  if(!box || !btn2) return null;
-  var names = ["SQL","Python","pandas","NumPy","scikit-learn","R","Excel","MySQL","Chart.js","Matplotlib","Slate","Java","Git","Tableau"];
-  var chips = [], live = false, BW = 0, BH = 0, prevT = 0;
-  function spawnAll(){
+  if(!box) return null;
+  var narrow2 = window.matchMedia("(max-width:991px)").matches;
+  var names = narrow2
+    ? ["SQL","Python","pandas","scikit-learn","Excel","Git"]
+    : ["SQL","Python","pandas","NumPy","scikit-learn","R","Excel","MySQL","Chart.js","Matplotlib","Slate","Java","Git","Tableau"];
+  var chips = [], BW = 0, BH = 0, prevT = 0, anyActive = false;
+  var COLW = narrow2 ? 116 : 148, GAP = 10, PADB = 18, PADR = 18;
+  function cols(){ if(BW < 560) return 1; return (BW > 1250 && !narrow2) ? 3 : 2; }
+  function layout(){
     BW = box.clientWidth; BH = box.clientHeight;
-    names.forEach(function(nm, i){
-      var el = document.createElement("span");
-      el.className = "fchip"; el.textContent = nm;
-      box.appendChild(el);
-      var c = {el:el, x:BW * .15 + Math.random() * BW * .7, y:-50 - i * 36,
-        vx:(Math.random()-.5) * 3, vy:1 + Math.random() * 2,
-        w:0, h:0, ph:Math.random() * 6.28, drag:false, gx:0, gy:0, px:0, py:0, pt:0};
-      requestAnimationFrame(function(){ c.w = el.offsetWidth; c.h = el.offsetHeight; });
-      hook(c); chips.push(c);
+    var nc = cols();
+    chips.forEach(function(c, i){ c.col = i % nc; });
+    var colStacks = {};
+    chips.forEach(function(c){
+      if(!colStacks[c.col]) colStacks[c.col] = 0;
+      c.floorY = BH - PADB - colStacks[c.col] - c.h;
+      colStacks[c.col] += c.h + GAP;
+      c.homeX = BW - PADR - (cols() - c.col) * COLW + (COLW - c.w) / 2;
     });
-    live = true;
-  }
-  function killAll(){
-    chips.forEach(function(c){ c.el.remove(); });
-    chips = []; live = false;
-  }
-  btn2.addEventListener("click", function(){
-    if(live){ killAll(); btn2.textContent = "Release the toolkit"; }
-    else { spawnAll(); btn2.textContent = "Recall the toolkit"; }
-  });
-  function hook(c){
-    if(reduce) return;
-    c.el.addEventListener("pointerdown", function(e){
-      e.preventDefault();
-      c.el.setPointerCapture(e.pointerId);
-      c.drag = true; c.el.classList.add("drag");
-      var hb = box.getBoundingClientRect();
-      c.gx = e.clientX - hb.left - c.x; c.gy = e.clientY - hb.top - c.y;
-      c.px = e.clientX; c.py = e.clientY; c.pt = performance.now(); c.vx = 0; c.vy = 0;
-    });
-    c.el.addEventListener("pointermove", function(e){
-      if(!c.drag) return;
-      var hb = box.getBoundingClientRect();
-      var now = performance.now(), dt = Math.max(8, now - c.pt);
-      c.vx = c.vx * .4 + ((e.clientX - c.px) / dt * 16.7) * .6;
-      c.vy = c.vy * .4 + ((e.clientY - c.py) / dt * 16.7) * .6;
-      c.px = e.clientX; c.py = e.clientY; c.pt = now;
-      c.x = e.clientX - hb.left - c.gx; c.y = e.clientY - hb.top - c.gy;
-      apply(c);
-    });
-    function rel(){ if(!c.drag) return; c.drag = false; c.el.classList.remove("drag");
-      c.vx = clamp(c.vx, -16, 16); c.vy = clamp(c.vy, -16, 16); }
-    c.el.addEventListener("pointerup", rel);
-    c.el.addEventListener("pointercancel", rel);
   }
   function apply(c){
-    c.el.style.transform = "translate3d(" + c.x.toFixed(1) + "px," + c.y.toFixed(1) + "px,0) rotate(" + clamp(c.vx * 1.6, -8, 8).toFixed(1) + "deg)";
+    c.el.style.transform = "translate3d(" + c.x.toFixed(1) + "px," + c.y.toFixed(1) + "px,0) rotate(" + c.tilt.toFixed(1) + "deg)";
+  }
+  function hookDrag(){
+    chips.forEach(function(c){
+      c.el.addEventListener("pointerdown", function(e){
+        e.preventDefault();
+        c.el.setPointerCapture(e.pointerId);
+        c.drag = true; c.free = true; c.settled = false; anyActive = true;
+        c.el.classList.add("drag");
+        var hb = box.getBoundingClientRect();
+        c.gx = e.clientX - hb.left - c.x; c.gy = e.clientY - hb.top - c.y;
+        c.px = e.clientX; c.py = e.clientY; c.pt = performance.now(); c.vx = 0; c.vy = 0;
+      });
+      c.el.addEventListener("pointermove", function(e){
+        if(!c.drag) return;
+        var hb = box.getBoundingClientRect();
+        var now = performance.now(), dt = Math.max(8, now - c.pt);
+        c.vx = c.vx * .4 + ((e.clientX - c.px) / dt * 16.7) * .6;
+        c.vy = c.vy * .4 + ((e.clientY - c.py) / dt * 16.7) * .6;
+        c.px = e.clientX; c.py = e.clientY; c.pt = now;
+        c.x = e.clientX - hb.left - c.gx; c.y = e.clientY - hb.top - c.gy;
+        apply(c);
+      });
+      function rel(){
+        if(!c.drag) return;
+        c.drag = false; c.el.classList.remove("drag");
+        c.vx = Math.max(-16, Math.min(16, c.vx));
+        c.vy = Math.max(-16, Math.min(16, c.vy));
+        anyActive = true;
+      }
+      c.el.addEventListener("pointerup", rel);
+      c.el.addEventListener("pointercancel", rel);
+    });
+  }
+  function build(){
+    names.forEach(function(nm){
+      var el = document.createElement("span");
+      el.className = "fchip"; el.textContent = nm;
+      el.style.visibility = "hidden";
+      box.appendChild(el);
+      chips.push({el:el, x:0, y:-80, vy:0, vx:0, w:0, h:0, col:0, floorY:0, homeX:0,
+        live:false, settled:false, free:false, drag:false, tilt:(Math.random()-.5)*4,
+        gx:0, gy:0, px:0, py:0, pt:0});
+    });
+    requestAnimationFrame(function(){
+      chips.forEach(function(c){ c.w = c.el.offsetWidth; c.h = c.el.offsetHeight; });
+      layout();
+      if(reduce){
+        chips.forEach(function(c){ c.x = c.homeX; c.y = c.floorY; c.live = true; c.settled = true;
+          c.el.style.visibility = ""; apply(c); });
+        return;
+      }
+      chips.forEach(function(c, i){
+        setTimeout(function(){
+          c.x = c.homeX + (Math.random() - .5) * 14;
+          c.y = -60 - Math.random() * 60;
+          c.vy = 0; c.live = true; c.el.style.visibility = "";
+          anyActive = true;
+        }, 500 + i * 130);
+      });
+      hookDrag();
+    });
   }
   function step(t){
-    if(!live) return;
+    if(!anyActive){ prevT = t; return; }
     var dt = prevT ? Math.min(40, t - prevT) : 16.7; prevT = t;
-    var k = dt / 16.7;
-    BW = box.clientWidth; BH = box.clientHeight;
+    var k = dt / 16.7, moving = false;
     for(var i = 0; i < chips.length; i++){
       var c = chips[i];
-      if(c.drag) continue;
-      c.vy += .22 * k; /* gentle gravity so they settle */
-      c.vx += Math.sin(t * .0004 + c.ph) * .01 * k;
-      c.vx *= Math.pow(.99, k); c.vy *= Math.pow(.995, k);
-      c.x += c.vx * k; c.y += c.vy * k;
-      if(c.x < 8){ c.x = 8; c.vx = Math.abs(c.vx) * .55; }
-      if(c.x > BW - c.w - 8){ c.x = BW - c.w - 8; c.vx = -Math.abs(c.vx) * .55; }
-      if(c.y > BH - c.h - 10){ c.y = BH - c.h - 10; c.vy = -Math.abs(c.vy) * .45; c.vx *= .92; }
-      if(c.y < -300) c.y = -300;
-    }
-    for(var a = 0; a < chips.length; a++) for(var b = a + 1; b < chips.length; b++){
-      var A = chips[a], B = chips[b];
-      var ax = A.x + A.w/2, ay = A.y + A.h/2, bx = B.x + B.w/2, by = B.y + B.h/2;
-      var dx = bx - ax, dy = by - ay, minD = (Math.max(A.w,A.h) + Math.max(B.w,B.h)) / 2;
-      var d2 = dx*dx + dy*dy;
-      if(d2 < minD * minD && d2 > .01){
-        var d = Math.sqrt(d2), pen = (minD - d) / 2, nx = dx/d, ny = dy/d;
-        if(!A.drag){ A.x -= nx*pen; A.y -= ny*pen; A.vx -= nx*.2; A.vy -= ny*.2; }
-        if(!B.drag){ B.x += nx*pen; B.y += ny*pen; B.vx += nx*.2; B.vy += ny*.2; }
+      if(!c.live || c.settled || c.drag) continue;
+      moving = true;
+      c.vy += .55 * k;
+      if(c.free){
+        c.vx *= Math.pow(.995, k);
+        c.x += c.vx * k;
+        if(c.x < 8){ c.x = 8; c.vx = Math.abs(c.vx) * .5; }
+        if(c.x > BW - c.w - 8){ c.x = BW - c.w - 8; c.vx = -Math.abs(c.vx) * .5; }
+        var ground = BH - PADB - c.h;
+        c.y += c.vy * k;
+        if(c.y >= ground){
+          c.y = ground; c.vy = -c.vy * .3; c.vx *= .85;
+          if(Math.abs(c.vy) < .9 && Math.abs(c.vx) < .4) c.settled = true;
+        }
+      } else {
+        c.y += c.vy * k;
+        if(c.y >= c.floorY){
+          c.y = c.floorY; c.vy = -c.vy * .22;
+          c.x += (c.homeX - c.x) * .3;
+          if(Math.abs(c.vy) < .9){ c.settled = true; c.x = c.homeX; }
+        }
       }
+      apply(c);
     }
-    for(var m2 = 0; m2 < chips.length; m2++) if(!chips[m2].drag) apply(chips[m2]);
+    if(!moving){
+      var dragging = false;
+      for(var d = 0; d < chips.length; d++) if(chips[d].drag) dragging = true;
+      if(!dragging) anyActive = false;
+    }
   }
+  function onResize(){
+    if(!chips.length) return;
+    chips.forEach(function(c){ c.w = c.el.offsetWidth; c.h = c.el.offsetHeight; });
+    layout();
+    chips.forEach(function(c){
+      if(c.settled && !c.free){ c.x = c.homeX; c.y = c.floorY; apply(c); }
+    });
+  }
+  var rt2; window.addEventListener("resize", function(){ clearTimeout(rt2); rt2 = setTimeout(onResize, 200); });
+  if(document.readyState === "complete") build();
+  else window.addEventListener("load", build);
   return {step:step};
 })();
  
@@ -1172,6 +1228,12 @@ var strataTargets = [
   {sel:".tools", art:function(){ return artContour(9, "#f4f4ed", null, 8); }},
   {sel:".findme", art:function(){ return artContour(12, "#282c20", null, 9); }}
 ];
+if("IntersectionObserver" in window){
+  var strataIO = new IntersectionObserver(function(es){
+    es.forEach(function(en){ en.target.classList.toggle("on-screen", en.isIntersecting); });
+  }, {threshold:0});
+  document.querySelectorAll(".s").forEach(function(s){ strataIO.observe(s); });
+}
 strataTargets.forEach(function(t){
   var sec = document.querySelector(t.sel);
   if(!sec) return;
@@ -1183,6 +1245,8 @@ strataTargets.forEach(function(t){
  
 /* ============ MASTER LOOP ============ */
 var heroVis = true, pageVis = true, lastTer = 0, prevY = window.pageYOffset, prevLoopT = 0;
+var lastHeroP = -1, lastDarkT = -1, lastThemeY = -1;
+var scrollCue = document.getElementById('scrollCue');
 if(heroTrack && "IntersectionObserver" in window){
   new IntersectionObserver(function(es){ heroVis = es[0].isIntersecting; }, {threshold:0}).observe(heroTrack);
 }
@@ -1207,22 +1271,30 @@ function master(t){
   /* pointer smoothing (drives the terrain bump) */
   M.sx = lerp(M.sx, M.x, .15); M.sy = lerp(M.sy, M.y, .15);
  
-  /* sticky hero progress */
+  /* sticky hero progress (style writes cached; terrain budget adapts) */
   if(heroStage && !reduce){
     var p = clamp(y / Math.max(vh, 1), 0, 1);
     heroDarkT = easeS(clamp((p - .58) / .4, 0, 1));
-    var bg = [lerp(244, 40, heroDarkT), lerp(244, 44, heroDarkT), lerp(237, 32, heroDarkT)];
-    heroStage.style.backgroundColor = "rgb(" + (bg[0]|0) + "," + (bg[1]|0) + "," + (bg[2]|0) + ")";
-    if(heroPortrait) heroPortrait.style.transform = "translateY(" + (-p * 6) + "vh) scale(" + (1 - p * .14).toFixed(4) + ")";
-    var drift = t * .012;
-    if(nameRow1){
-      nameRow1.style.transform = "translateX(" + (-8 - p * 16 - drift % 30) + "%)";
-      nameRow2.style.transform = "translateX(" + (-26 + p * 16 + drift % 30 * .7) + "%)";
-      var rowCol = heroDarkT > .5 ? "rgba(244,244,237," : "rgba(40,44,32,";
-      nameRow1.style.webkitTextStroke = "1.5px " + rowCol + ".4)";
-      nameRow2.style.color = rowCol + (heroDarkT > .5 ? ".12)" : ".14)");
+    if(Math.abs(p - lastHeroP) > .002 || lastHeroP < 0){
+      lastHeroP = p;
+      var bg = [lerp(244, 40, heroDarkT), lerp(244, 44, heroDarkT), lerp(237, 32, heroDarkT)];
+      heroStage.style.backgroundColor = 'rgb(' + (bg[0]|0) + ',' + (bg[1]|0) + ',' + (bg[2]|0) + ')';
+      if(heroPortrait) heroPortrait.style.transform = 'translateY(' + (-p * 6) + 'vh) scale(' + (1 - p * .14).toFixed(4) + ')';
+      if(scrollCue) scrollCue.style.opacity = Math.max(0, 1 - p * 2.4).toFixed(2);
+      if(Math.abs(heroDarkT - lastDarkT) > .03){
+        lastDarkT = heroDarkT;
+        var rowCol = heroDarkT > .5 ? 'rgba(244,244,237,' : 'rgba(40,44,32,';
+        nameRow1.style.webkitTextStroke = '1.5px ' + rowCol + '.4)';
+        nameRow2.style.color = rowCol + (heroDarkT > .5 ? '.12)' : '.14)');
+      }
     }
-    if(heroVis && TER && t - lastTer >= 33){
+    if(heroVis && nameRow1){
+      var drift = t * .012;
+      nameRow1.style.transform = 'translateX(' + (-8 - p * 16 - drift % 30) + '%)';
+      nameRow2.style.transform = 'translateX(' + (-26 + p * 16 + drift % 30 * .7) + '%)';
+    }
+    var terBudget = (p > .2 ? 80 : 40);
+    if(heroVis && TER && Math.abs(velPS) < 1500 && t - lastTer >= terBudget){
       lastTer = t;
       var hb = TER.el.getBoundingClientRect();
       var overHero = M.has && M.sy >= hb.top && M.sy <= hb.bottom && fine;
@@ -1266,7 +1338,7 @@ function master(t){
     mScroll.style.transform = "translate3d(" + (x - mColW).toFixed(1) + "px,0,0)";
   }
  
-  navTheme();
+  if(Math.abs(y - lastThemeY) > 6){ lastThemeY = y; navTheme(); }
 }
 requestAnimationFrame(master);
 if(reduce){
