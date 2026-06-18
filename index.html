@@ -150,7 +150,7 @@ body.menu-open .menu-links a:nth-child(5) .inner{transition-delay:.44s}
 .menu-foot .who{font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--owg-2)}
 
 /* ================= STICKY HERO ================= */
-.hero-track{height:200vh;position:relative}
+.hero-track{height:120vh;position:relative}
 .hero-stage{position:sticky;top:0;height:100vh;min-height:100svh;overflow:clip;background:var(--off);display:flex;align-items:center;justify-content:center}
 #terrain{position:absolute;inset:0;width:100%;height:100%;z-index:0;image-rendering:auto}
 /* hero composition: contact card left, identity card right, bubbles in between */
@@ -194,7 +194,7 @@ body.loaded .glass-card.id-card{transition-delay:.42s}
 .gc-btn.main{background:var(--green);color:var(--lime);border-color:var(--green)}
 .gc-btn.main:hover{background:var(--ocean-3);border-color:var(--ocean-3);color:#fff}
 /* identity card — no photo; Current Focus banner header, then the about statement */
-.id-card{width:min(366px,42vw);margin-bottom:clamp(1rem,5vh,4rem)}
+.id-card{width:min(366px,42vw);align-self:center;margin-bottom:0;margin-right:clamp(0px,3vw,56px)}
 .ic-focus{padding:1.05rem 1.3rem 1.1rem;position:relative;
   background:linear-gradient(150deg,rgba(19,48,61,.94),rgba(19,48,61,.82));
   border-bottom:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
@@ -210,6 +210,19 @@ body.loaded .glass-card.id-card{transition-delay:.42s}
 .ic-tags span{font-weight:900;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ocean-3);
   border:1.5px solid rgba(46,98,117,.42);border-radius:99px;padding:.3rem .6rem}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+/* catch-the-bubble game label (liquid glass pill) */
+.bubble-game{position:absolute;z-index:4;left:50%;top:clamp(90px,13vh,140px);transform:translateX(-50%);
+  display:flex;align-items:center;gap:.5rem;padding:.5rem .95rem;border-radius:99px;white-space:nowrap;
+  background:radial-gradient(120% 160% at 30% 20%, rgba(255,255,255,.66), rgba(255,255,255,.3) 60%, rgba(156,196,212,.2));
+  -webkit-backdrop-filter:blur(7px) saturate(1.25);backdrop-filter:blur(7px) saturate(1.25);
+  border:1px solid rgba(255,255,255,.62);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8), 0 12px 26px -12px rgba(14,39,51,.45);
+  font-weight:900;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);
+  pointer-events:none;opacity:0;transition:opacity .9s var(--ease-out) .6s}
+body.loaded .bubble-game{opacity:1}
+.bubble-game .bg-dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(216,162,74,.2)}
+.bubble-game .bg-text b{color:var(--ocean-3)}
+
 /* rotating scroll cue on a liquid-glass disc */
 .scroll-cue{position:absolute;z-index:4;left:50%;bottom:calc(var(--pad)*1.2);transform:translateX(-50%);width:96px;height:96px;color:var(--green)}
 .scroll-cue::before{content:"";position:absolute;left:50%;top:50%;width:84px;height:84px;transform:translate(-50%,-50%);border-radius:50%;z-index:0;
@@ -221,7 +234,7 @@ body.loaded .glass-card.id-card{transition-delay:.42s}
   background:radial-gradient(circle,rgba(255,255,255,.9),transparent 70%);pointer-events:none}
 .scroll-cue svg{position:absolute;inset:0;width:100%;height:100%;animation:cueSpin 16s linear infinite;overflow:visible;z-index:2}
 .scroll-cue text{font-family:var(--sans);font-weight:900;font-size:8.4px;letter-spacing:.16em;fill:currentColor;text-transform:uppercase}
-.scroll-cue .arr{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:1.25rem;font-weight:900;z-index:3;animation:cueBob 1.6s var(--ease) infinite}
+.scroll-cue .arr{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:1.7rem;font-weight:900;line-height:1;color:var(--green);z-index:3;text-shadow:0 1px 2px rgba(255,255,255,.6);animation:cueBob 1.6s var(--ease) infinite}
 @keyframes cueSpin{to{transform:rotate(360deg)}}
 @keyframes cueBob{0%,100%{transform:translate(-50%,-58%)}50%{transform:translate(-50%,-42%)}}
 @media (max-width:991px){.scroll-cue{width:74px;height:74px;bottom:var(--pad)}.scroll-cue text{font-size:12px}}
@@ -374,9 +387,6 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
 
 /* ================= TOOLS MARQUEE ================= */
 .tools{background:var(--green);color:var(--off);padding:clamp(90px,13vh,160px) 0;position:relative}
-.tools .ghost-word{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%) rotate(-4deg);
-  font-family:var(--disp);font-style:italic;font-weight:700;font-size:clamp(120px,20vw,300px);color:color-mix(in srgb,var(--lime) 12%,transparent);
-  pointer-events:none;white-space:nowrap;z-index:0}
 .tools-inner{position:relative;z-index:1;max-width:1500px;margin:0 auto;padding:0 calc(var(--pad)*2)}
 .tools h2{font-size:clamp(40px,4.86vw,68px)}
 .tools p{max-width:46ch;color:var(--owg-1);margin:1rem 0 0;font-weight:600;line-height:1.5}
@@ -432,6 +442,7 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
   .hero-wrap{padding:0;justify-content:center;align-items:center}
   .glass-card{width:min(380px,90vw)}
   .id-card{display:none}
+  .bubble-game{display:none}
   .gc-photo{aspect-ratio:4/2.7}
   .skillfield{z-index:1}
   .story{height:auto;background:var(--green)}
@@ -569,9 +580,12 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
           <defs><path id="cuePath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
           <text textLength="231" lengthAdjust="spacingAndGlyphs"><textPath href="#cuePath" textLength="231" lengthAdjust="spacingAndGlyphs">SCROLL · ENTER THE EXHIBIT · SCROLL · ENTER THE EXHIBIT · </textPath></text>
         </svg>
-        <span class="arr">↓</span>
+        <span class="arr">⬇</span>
       </div>
-      <div class="skillfield" id="skillfield" aria-hidden="true"></div>
+      <div class="bubble-game" id="bubbleGame" aria-hidden="true">
+        <span class="bg-dot"></span>
+        <span class="bg-text" id="bgText">Catch &amp; pop the skill bubbles</span>
+      </div>
     </section>
   </div>
 
@@ -763,7 +777,6 @@ h2.impact .alt{font-family:var(--disp);font-style:italic;font-weight:700;text-tr
 
   <!-- ============ TOOLS MARQUEE ============ -->
   <section class="s tools" id="skills" data-navtheme="light" aria-labelledby="tl-h">
-    <span class="ghost-word" aria-hidden="true">fine-tuning</span>
     <div class="tools-inner">
       <div class="s-head" style="padding:0;margin:0 0 1.4rem"><span class="num">03</span><span class="label">Tools &amp; methods</span><span class="rule"></span></div>
       <h2 class="impact" id="tl-h" data-split>THE WORKING <span class="alt">stack.</span></h2>
@@ -1179,7 +1192,7 @@ var TER = (function(){
     }
     ctx.fillStyle = hg; ctx.fillRect(0, 0, W, H);
 
-    /* cached per-layer vertical gradients — rebuilt only when the blend or size changes */
+    /* flat-fill layer colors — cached, rebuilt only when blend or size changes (no per-frame gradients) */
     var dk = Math.round(darkT * 20);
     if(dk !== gradKey || gradH !== H){
       gradKey = dk; gradH = H; grads = [];
@@ -1187,10 +1200,7 @@ var TER = (function(){
         var gc1 = L_LIGHT[gi], gc2 = L_DARK[gi];
         var r0 = gc1[0]+(gc2[0]-gc1[0])*darkT, g0 = gc1[1]+(gc2[1]-gc1[1])*darkT,
             b0 = gc1[2]+(gc2[2]-gc1[2])*darkT, a0 = gc1[3]+(gc2[3]-gc1[3])*darkT;
-        var gg = ctx.createLinearGradient(0, 0, 0, H);
-        gg.addColorStop(0, "rgba(" + (Math.min(255,r0+18)|0) + "," + (Math.min(255,g0+18)|0) + "," + (Math.min(255,b0+20)|0) + "," + a0.toFixed(3) + ")");
-        gg.addColorStop(1, "rgba(" + (r0|0) + "," + (g0|0) + "," + (b0|0) + "," + a0.toFixed(3) + ")");
-        grads.push(gg);
+        grads.push("rgba(" + (r0|0) + "," + (g0|0) + "," + (b0|0) + "," + a0.toFixed(3) + ")");
       }
     }
 
@@ -1298,7 +1308,7 @@ var CHIPS = (function(){
   var names = narrow2
     ? ["SQL","Python","pandas","scikit-learn","Excel","Git","R","NumPy"]
     : ["SQL","Python","pandas","NumPy","scikit-learn","R","Excel","MySQL","Chart.js","Matplotlib","Slate","Java","Git","Tableau"];
-  var chips = [], BW = 0, BH = 0, prevT = 0;
+  var chips = [], BW = 0, BH = 0, prevT = 0, caught = 0;
   var cards = [];                         // {l,t,r,b} card rects in box space — bubbles avoid these
   function refreshCards(){
     cards = [];
@@ -1392,6 +1402,9 @@ var CHIPS = (function(){
     if(c.popped) return;
     c.popped = true; c.live = false; c.el.classList.add("pop");
     popFx(c.x + c.d / 2, c.y + c.d / 2, c.d);
+    caught++;
+    var bt = document.getElementById("bgText");
+    if(bt) bt.innerHTML = "Bubbles caught &middot; <b>" + caught + "</b>";
     var nm = c.nm;
     setTimeout(function(){
       c.el.remove();
@@ -1538,7 +1551,7 @@ strataTargets.forEach(function(t){
 });
 
 /* ============ MASTER LOOP ============ */
-var heroVis = true, pageVis = true, lastTer = 0, prevY = window.pageYOffset, prevLoopT = 0;
+var heroVis = true, pageVis = true, lastTer = 0, prevY = window.pageYOffset, prevLoopT = 0, startT = 0;
 var lastHeroP = -1, lastDarkT = -1, lastThemeY = -1;
 var scrollCue = document.getElementById('scrollCue');
 if(heroTrack && "IntersectionObserver" in window){
@@ -1551,6 +1564,7 @@ function easeS(x){ return x * x * (3 - 2 * x); }
 
 function master(t){
   requestAnimationFrame(master);
+  if(!startT) startT = t;
   if(!pageVis) return;
   var dt = prevLoopT ? Math.min(50, t - prevLoopT) : 16.7; prevLoopT = t;
 
@@ -1577,6 +1591,7 @@ function master(t){
       if(scrollCue) scrollCue.style.opacity = Math.max(0, 1 - p * 2.4).toFixed(2);
     }
     var terBudget = (Math.abs(velPS) > 40 ? 120 : (p > .12 ? 80 : 50));
+    if(t - startT < 1100) terBudget = 140;     /* ease the entrance: render water sparsely while cards/bubbles animate in */
     if(heroVis && TER && Math.abs(velPS) < 1500 && t - lastTer >= terBudget){
       lastTer = t;
       var hb = TER.el.getBoundingClientRect();
